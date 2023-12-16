@@ -1,5 +1,5 @@
 import frappe
-from hrms.hr.doctype.leave_allocation.leave_allocation import get_carry_forwarded_leaves
+# from hrms.hr.doctype.leave_allocation.leave_allocation import get_carry_forwarded_leaves
 
 def get_leaves(date_of_joining, allocation_start_date, leave_distribution_template=None):
     opening_months = round(frappe.utils.date_diff(allocation_start_date, date_of_joining)/365 * 12)
