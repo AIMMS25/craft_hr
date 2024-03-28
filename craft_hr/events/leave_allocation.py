@@ -1,7 +1,7 @@
 import frappe
 from craft_hr.events.get_leaves import get_leaves, get_earned_leave
 
-def before_save(doc,method):
+def validate(doc,method):
     # TODO: use is_earned_leave from inside leave type for this logic
     if doc.custom_is_earned_leave:
         total_opening_leaves = get_leaves(doc.custom_date_of_joining,doc.from_date, doc.custom_leave_distribution_template) or 0
