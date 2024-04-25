@@ -121,9 +121,12 @@ after_install = "craft_hr.install.after_install"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	# "ToDo": "custom_app.overrides.CustomToDo"
+     "Leave Encashment":"craft_hr.overrides.leave_encashment.CustomLeaveEncashment",
+
+ 
+}
 
 # Document Events
 # ---------------
@@ -139,7 +142,7 @@ after_install = "craft_hr.install.after_install"
 
 doc_events = {
     "Leave Allocation":{
-        "validate": "craft_hr.events.leave_allocation.validate",
+        # "validate": "craft_hr.events.leave_allocation.validate",
         #"before_submit": "craft_hr.events.leave_allocation.before_submit",
         "after_submit": "craft_hr.events.leave_allocation.after_submit",
     },
