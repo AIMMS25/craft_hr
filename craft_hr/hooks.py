@@ -155,6 +155,9 @@ doc_events = {
     },
 	"Salary Slip": {
 		"before_validate": "craft_hr.events.salary_slip.before_validate"
+	},
+    "Shift Type": {
+        "before_validate":"craft_hr.events.shift_type.before_validate"
 	}
 }
 
