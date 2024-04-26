@@ -20,8 +20,10 @@ def on_submit(doc,method=None):
         return
 
     (shift_end,shift_start,break_hours,enable_ot,enable_hot,shift_threshold) = frappe.db.get_value('Shift Type',doc.shift,['end_time','start_time','break_hours','enable_ot','enable_hot','shift_threshold'])
-    start = datetime.datetime.strptime(shift_start, "%H:%M:%S")
-    end = datetime.datetime.strptime(shift_end, "%H:%M:%S")
+    # start = datetime.datetime.strptime(shift_start, "%H:%M:%S")
+    # end = datetime.datetime.strptime(shift_end, "%H:%M:%S")
+    start = shift_start
+    end = shift_end
     if doc.is_night_shift:
         end += timedelta(hours=24)
     shift_hours = time_diff_in_hours(end,start)
