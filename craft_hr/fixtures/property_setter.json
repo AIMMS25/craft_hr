@@ -1,6 +1,22 @@
 [
  {
   "default_value": null,
+  "doc_type": "Salary Structure",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "leave_encashment_amount_per_day",
+  "is_system_generated": 0,
+  "modified": "2024-04-30 10:43:14.338309",
+  "module": "Craft HR",
+  "name": "Salary Structure-leave_encashment_amount_per_day-hidden",
+  "property": "hidden",
+  "property_type": "Check",
+  "row_name": null,
+  "value": "1"
+ },
+ {
+  "default_value": null,
   "doc_type": "Leave Allocation",
   "docstatus": 0,
   "doctype": "Property Setter",
