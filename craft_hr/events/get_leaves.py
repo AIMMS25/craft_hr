@@ -28,6 +28,8 @@ def get_leaves(date_of_joining, allocation_start_date, leave_distribution_templa
         leaves = cumulative_allocation[opening_months]
     else:
         leaves = cumulative_allocation[max_months] + cumulative_allocation[0] * (opening_months - max_months)
+    if opening_months==0:
+        leaves=0
     return leaves
 
 def get_earned_leave(employee=None):
