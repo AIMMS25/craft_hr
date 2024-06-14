@@ -123,7 +123,8 @@ after_install = "craft_hr.install.after_install"
 
 override_doctype_class = {
 	# "ToDo": "custom_app.overrides.CustomToDo"
-     "Leave Encashment":"craft_hr.overrides.leave_encashment.CustomLeaveEncashment",
+	# "Leave Encashment":"craft_hr.overrides.leave_encashment.CustomLeaveEncashment",
+
 
  
 }
@@ -203,7 +204,8 @@ scheduler_events = {
 # }
 
 override_doctype_dashboards = {
-    "Employee": "craft_hr.overrides.dashboard_overrides.get_dashboard_for_employee"
+    "Employee": "craft_hr.overrides.dashboard_overrides.get_dashboard_for_employee",
+
 }
 
 # exempt linked doctypes from being automatically cancelled
