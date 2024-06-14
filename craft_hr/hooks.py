@@ -121,9 +121,13 @@ after_install = "craft_hr.install.after_install"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	# "ToDo": "custom_app.overrides.CustomToDo"
+	# "Leave Encashment":"craft_hr.overrides.leave_encashment.CustomLeaveEncashment",
+
+
+ 
+}
 
 # Document Events
 # ---------------
@@ -139,8 +143,8 @@ after_install = "craft_hr.install.after_install"
 
 doc_events = {
     "Leave Allocation":{
-        "before_save": "craft_hr.events.leave_allocation.before_save",
-        "before_submit": "craft_hr.events.leave_allocation.before_submit",
+        # "validate": "craft_hr.events.leave_allocation.validate",
+        #"before_submit": "craft_hr.events.leave_allocation.before_submit",
         "after_submit": "craft_hr.events.leave_allocation.after_submit",
     },
     "Leave Application":{
@@ -152,6 +156,9 @@ doc_events = {
     },
 	"Salary Slip": {
 		"before_validate": "craft_hr.events.salary_slip.before_validate"
+	},
+    "Shift Type": {
+        "before_validate":"craft_hr.events.shift_type.before_validate"
 	}
 }
 
@@ -197,7 +204,8 @@ scheduler_events = {
 # }
 
 override_doctype_dashboards = {
-    "Employee": "craft_hr.overrides.dashboard_overrides.get_dashboard_for_employee"
+    "Employee": "craft_hr.overrides.dashboard_overrides.get_dashboard_for_employee",
+
 }
 
 # exempt linked doctypes from being automatically cancelled

@@ -3,9 +3,9 @@ from craft_hr.events.get_leaves import get_earned_leave
 
 def reset_leave_allocation():
     filters = {
-        "reset_allocation_on_expiry":1,
+        "reset_allocation_on_expiry": 1,
         "to_date": frappe.utils.today(),
-        "docstatus":"1",
+        "docstatus": 1,
     }
     allocations = frappe.db.get_all("Leave Allocation", filters=filters, pluck="name")
     for allocation_name in allocations:
@@ -13,7 +13,7 @@ def reset_leave_allocation():
         new_allocation = frappe.copy_doc(allocation)
         new_allocation.from_date = frappe.utils.add_days(new_allocation.to_date, 1)
         new_allocation.to_date = frappe.utils.add_years(new_allocation.to_date, 1)
-        new_allocation.carry_forward = 0
+        new_allocation.carry_forward = frappe.db.get_single_value("Craft HR Settings", "reset_allocation_with_carry_forward") or 0
         new_allocation.new_leaves_allocated = new_allocation.reset_to
         new_allocation.insert(ignore_permissions=True)
         new_allocation.submit()

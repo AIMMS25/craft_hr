@@ -2,6 +2,8 @@ import frappe
 from frappe.utils import (time_diff_in_hours)
 from hrms.hr.utils import get_holiday_dates_for_employee
 from craft_hr.events.get_leaves import get_earned_leave
+import datetime
+from datetime import timedelta
 
 def on_cancel(doc, method):
     #TODO: condition to check if the leave type is earned leave
@@ -17,8 +19,14 @@ def on_submit(doc,method=None):
     if not doc.shift or not doc.working_hours:
         return
 
-    (shift_end,shift_start,break_hours,enable_ot,enable_hot,shift_threshold) = frappe.db.get_value('Shift Type',doc.shift,['end_time','start_time','break_hours','enable_ot','enable_hot','shift_threshold'])
-    shift_hours = time_diff_in_hours(shift_end,shift_start)
+    (shift_end,shift_start,break_hours,enable_ot,enable_hot,shift_threshold,is_night_shift) = frappe.db.get_value('Shift Type',doc.shift,['end_time','start_time','break_hours','enable_ot','enable_hot','shift_threshold','is_night_shift'])
+    # start = datetime.datetime.strptime(shift_start, "%H:%M:%S")
+    # end = datetime.datetime.strptime(shift_end, "%H:%M:%S")
+    start = shift_start
+    end = shift_end
+    if is_night_shift:
+        end += timedelta(hours=24)
+    shift_hours = time_diff_in_hours(end,start)
 
     if shift_threshold < 1:
         shift_threshold = 1

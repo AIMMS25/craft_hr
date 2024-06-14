@@ -9,6 +9,7 @@
  "field_order": [
   "hr_features_section",
   "leave_allocation_based_on_leave_distribution_template",
+  "reset_allocation_with_carry_forward",
   "payroll_features_section",
   "assign_salary_components_during_assignment"
  ],
@@ -34,12 +35,18 @@
    "fieldname": "assign_salary_components_during_assignment",
    "fieldtype": "Check",
    "label": "Assign salary components during assignment"
+  },
+  {
+   "default": "0",
+   "fieldname": "reset_allocation_with_carry_forward",
+   "fieldtype": "Check",
+   "label": "Reset Allocation with Carry Forward"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-10-23 17:34:45.227465",
+ "modified": "2024-06-14 15:29:41.825863",
  "modified_by": "Administrator",
  "module": "Craft HR",
  "name": "Craft HR Settings",
