@@ -139,9 +139,9 @@ after_install = "craft_hr.install.after_install"
 
 doc_events = {
     "Leave Allocation":{
-        "before_save": "craft_hr.events.leave_allocation.before_save",
+        "validate": "craft_hr.events.leave_allocation.before_save",
         "before_submit": "craft_hr.events.leave_allocation.before_submit",
-        "after_submit": "craft_hr.events.leave_allocation.after_submit",
+        # "after_submit": "craft_hr.events.leave_allocation.after_submit",
     },
     "Leave Application":{
         "on_submit": "craft_hr.events.leave_application.on_submit"
