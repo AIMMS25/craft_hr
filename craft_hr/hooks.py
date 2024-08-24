@@ -143,7 +143,7 @@ override_doctype_class = {
 
 doc_events = {
     "Leave Allocation":{
-        # "validate": "craft_hr.events.leave_allocation.validate",
+        "validate": "craft_hr.events.leave_allocation.validate",
         #"before_submit": "craft_hr.events.leave_allocation.before_submit",
         "after_submit": "craft_hr.events.leave_allocation.after_submit",
     },
