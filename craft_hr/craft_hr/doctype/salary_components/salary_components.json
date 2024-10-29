@@ -14,7 +14,9 @@
   "mobile_allowance",
   "car_allowance",
   "leave_encashment_amount_per_day",
+  "increment_amount",
   "column_break_xqzh",
+  "increment_date",
   "cost_of_living_allowance",
   "insurance_allowance",
   "holiday_overtime_rate",
@@ -22,8 +24,7 @@
   "fuel_allowance",
   "job_well_done",
   "position_level",
-  "attendance_bonus",
-  "total_amount"
+  "attendance_bonus"
  ],
  "fields": [
   {
@@ -127,16 +128,22 @@
    "label": "Holiday Overtime Rate"
   },
   {
-   "fieldname": "total_amount",
+   "fieldname": "increment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Increment Date"
+  },
+  {
+   "fieldname": "increment_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount",
-   "read_only": 1
+   "in_list_view": 1,
+   "label": "Increment Amount"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-10-28 15:05:17.798867",
+ "modified": "2024-10-29 10:44:41.875610",
  "modified_by": "Administrator",
  "module": "Craft HR",
  "name": "Salary Components",

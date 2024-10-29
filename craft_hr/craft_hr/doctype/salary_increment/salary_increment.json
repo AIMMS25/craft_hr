@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:SI-{YYYY}-{####}",
  "creation": "2024-10-25 16:02:45.706838",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,17 +10,18 @@
   "employee_name",
   "designation",
   "column_break_emir",
-  "date",
   "company",
   "salary_components_section",
   "column_break_bdwd",
   "components",
-  "amended_from"
+  "delete_component"
  ],
  "fields": [
   {
    "fieldname": "employee",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Employee",
    "options": "Employee",
    "reqd": 1
@@ -32,13 +34,6 @@
    "in_standard_filter": 1,
    "label": "Employee Name",
    "read_only": 1
-  },
-  {
-   "default": "Today",
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date",
-   "reqd": 1
   },
   {
    "fetch_from": "employee.designation",
@@ -76,22 +71,19 @@
    "read_only": 1
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Salary Increment",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "depends_on": "components",
+   "fieldname": "delete_component",
+   "fieldtype": "Button",
+   "label": "Delete"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-28 11:59:09.940360",
+ "modified": "2024-10-29 15:30:14.442702",
  "modified_by": "Administrator",
  "module": "Craft HR",
  "name": "Salary Increment",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

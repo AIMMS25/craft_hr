@@ -13,7 +13,7 @@ frappe.ui.form.on('Salary Increment', {
                     if (response.message) {
                         let components = response.message;
 
-                        // frm.clear_table('components');
+                        frm.clear_table('components');
 
                         let row = frm.add_child('components');
                         row.basic = components.basic;
@@ -34,123 +34,91 @@ frappe.ui.form.on('Salary Increment', {
                         row.holiday_overtime_rate = components.holiday_overtime_rate;
 
                         frm.refresh_field('components');
+                    } else {
+                        frm.clear_table('components');
+                        frm.refresh_field('components');
+                        frappe.msgprint(__('No salary structure assignment found for this employee.'));
                     }
                 }
             });
+        } else {
+            frm.clear_table('components');
+            frm.refresh_field('components');
         }
     },
+    delete_component: function(frm) {
+        if (!frm.doc.components || frm.doc.components.length === 0) {
+            frappe.show_alert({
+                message: __('No components to delete'),
+                indicator: 'orange'
+            });
+            return;
+        }
+    
+        const lastComponent = frm.doc.components[frm.doc.components.length - 1];
+        
+        if (!lastComponent.increment_date) {
+            frappe.show_alert({
+                message: __('The last component does not have an increment date.'),
+                indicator: 'orange'
+            });
+            return;
+        }
+    
+        frappe.db.get_value('Salary Structure Assignment', { 
+            employee: frm.doc.employee, 
+            from_date: lastComponent.increment_date 
+        }, 'name', function (result) {
+            if (result.name) {
+                frappe.confirm(
+                    __('Are you sure you want to delete the last row? This will also require you to delete the corresponding Salary Structure Assignment: {0}.', [result.name]),
+                    function() {
+                        frm.doc.components.pop();
+                        frm.save();
+                        frm.refresh_field('components');
+                    }
+                );
+            } else {
+                frappe.confirm(
+                    __('Are you sure you want to delete the last row?'),
+                    function() {
+                        frm.doc.components.pop();
+                        frm.save();
+                        frm.refresh_field('components');
+                    }
+                );
+            }
+        });
+    },
     refresh: function(frm) {
+        if (!frm.is_new()) {
             frm.add_custom_button(__('Add Salary'), function() {
+                const default_components = frm.doc.components[frm.doc.components.length - 1];
+
                 let d = new frappe.ui.Dialog({
                     title: 'Add Salary Details',
                     fields: [
-                        {
-                            fieldname: 'employee',
-                            label: 'Employee',
-                            fieldtype: 'Link',
-                            options: 'Employee',
-                            default: frm.doc.employee,
-                            read_only: 1
-                        },
-                        {
-                            fieldname: 'date',
-                            label: 'Date',
-                            fieldtype: 'Date',
-                            default: frm.doc.date,
-                        },
-                        {
-                            fieldname: 'salary_structure',
-                            label: 'Salary Structure',
-                            fieldtype: 'Link',
-                            options: 'Salary Structure',
-                        },
-                        {
-                            fieldname: 'basic',
-                            label: 'Basic',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'hra',
-                            label: 'HRA',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'transport_allowance',
-                            label: 'Transport Allowance',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'cost_of_living_allowance',
-                            label: 'Cost of Living Allowance',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'other_allowance',
-                            label: 'Other Allowance',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'insurance_allowance',
-                            label: 'Insurance Allowance',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'food_allowance',
-                            label: 'Food Allowance',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'car_allowance',
-                            label: 'Car Allowance',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'mobile_allowance',
-                            label: 'Mobile Allowance',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'overtime_hourly_rate',
-                            label: 'Overtime Hourly Rate',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'fuel_allowance',
-                            label: 'Fuel Allowance',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'leave_encashment_amount_per_day',
-                            label: 'Leave Encashment Amount Per Day',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'job_well_done',
-                            label: 'Job Well Done',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'position_level',
-                            label: 'Position Level',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'attendance_bonus',
-                            label: 'Attendance Bonus',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'holiday_overtime_rate',
-                            label: 'Holiday Overtime Rate',
-                            fieldtype: 'Currency'
-                        },
-                        {
-                            fieldname: 'salary_icnrement',
-                            label: 'Salary Increment',
-                            fieldtype: 'Link',
-                            options : 'Salary Increment'
-                        },
-
+                        { fieldname: 'salary_increment', label: 'Salary Increment', fieldtype: 'Link', options: 'Salary Increment', default: frm.doc.name },
+                        { fieldname: 'employee', label: 'Employee', fieldtype: 'Link', options: 'Employee', default: frm.doc.employee, read_only: 1 },
+                        { fieldname: 'date', label: 'Date', fieldtype: 'Date', default: frm.doc.date },
+                        { fieldname: 'salary_structure', label: 'Salary Structure', fieldtype: 'Link', options: 'Salary Structure' },
+                        { fieldname: 'increment_amount', label: 'Increment Amount', fieldtype: 'Currency' },
+                        { fieldname: 'basic', label: 'Basic', fieldtype: 'Currency', default: default_components.basic },
+                        { fieldname: 'hra', label: 'HRA', fieldtype: 'Currency', default: default_components.hra },
+                        { fieldname: 'transport_allowance', label: 'Transport Allowance', fieldtype: 'Currency', default: default_components.transport_allowance },
+                        { fieldname: 'cost_of_living_allowance', label: 'Cost of Living Allowance', fieldtype: 'Currency', default: default_components.cost_of_living_allowance },
+                        { fieldname: 'other_allowance', label: 'Other Allowance', fieldtype: 'Currency', default: default_components.other_allowance },
+                        { fieldname: 'insurance_allowance', label: 'Insurance Allowance', fieldtype: 'Currency', default: default_components.insurance_allowance },
+                        { fieldname: 'food_allowance', label: 'Food Allowance', fieldtype: 'Currency', default: default_components.food_allowance },
+                        { fieldname: 'car_allowance', label: 'Car Allowance', fieldtype: 'Currency', default: default_components.car_allowance },
+                        { fieldname: 'mobile_allowance', label: 'Mobile Allowance', fieldtype: 'Currency', default: default_components.mobile_allowance },
+                        { fieldname: 'overtime_hourly_rate', label: 'Overtime Hourly Rate', fieldtype: 'Currency', default: default_components.overtime_hourly_rate },
+                        { fieldname: 'fuel_allowance', label: 'Fuel Allowance', fieldtype: 'Currency', default: default_components.fuel_allowance },
+                        { fieldname: 'leave_encashment_amount_per_day', label: 'Leave Encashment Amount Per Day', fieldtype: 'Currency', default: default_components.leave_encashment_amount_per_day },
+                        { fieldname: 'job_well_done', label: 'Job Well Done', fieldtype: 'Currency', default: default_components.job_well_done },
+                        { fieldname: 'position_level', label: 'Position Level', fieldtype: 'Currency', default: default_components.position_level },
+                        { fieldname: 'attendance_bonus', label: 'Attendance Bonus', fieldtype: 'Currency', default: default_components.attendance_bonus },
+                        { fieldname: 'holiday_overtime_rate', label: 'Holiday Overtime Rate', fieldtype: 'Currency', default: default_components.holiday_overtime_rate }
                     ],
                     primary_action_label: 'Save',
                     primary_action: function(data) {
@@ -163,7 +131,7 @@ frappe.ui.form.on('Salary Increment', {
                                         doc: {
                                             doctype: 'Salary Structure Assignment',
                                             employee: data.employee,
-                                            custom_salary_increment : data.name,
+                                            custom_salary_increment: data.name,
                                             salary_structure: data.salary_structure,
                                             from_date: data.date,
                                             sc_basic: data.basic,
@@ -181,7 +149,8 @@ frappe.ui.form.on('Salary Increment', {
                                             sc_jwd: data.job_well_done,
                                             sc_position_level: data.position_level,
                                             sc_attendance_bonus: data.attendance_bonus,
-                                            holiday_ot_rate: data.holiday_overtime_rate
+                                            holiday_ot_rate: data.holiday_overtime_rate,
+                                            custom_salary_increment: data.salary_increment
                                         }
                                     },
                                     callback: function(response) {
@@ -208,7 +177,10 @@ frappe.ui.form.on('Salary Increment', {
                                             row.position_level = data.position_level;
                                             row.attendance_bonus = data.attendance_bonus;
                                             row.holiday_overtime_rate = data.holiday_overtime_rate;
-
+                                            row.increment_amount = data.increment_amount;
+                                            row.increment_date = data.date;
+                                            
+                                            frm.save();
                                             frm.refresh_field('components');
                                         }
                                     }
@@ -228,5 +200,6 @@ frappe.ui.form.on('Salary Increment', {
                 d.show();
             });
         }
-    
+    }
 });
+
