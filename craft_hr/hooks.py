@@ -123,7 +123,7 @@ after_install = "craft_hr.install.after_install"
 
 override_doctype_class = {
 	# "ToDo": "custom_app.overrides.CustomToDo"
-	# "Leave Encashment":"craft_hr.overrides.leave_encashment.CustomLeaveEncashment",
+	 "Leave Encashment":"craft_hr.overrides.leave_encashment.CustomLeaveEncashment",
 
 
  
