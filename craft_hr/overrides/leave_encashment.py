@@ -17,9 +17,9 @@ class CustomLeaveEncashment(LeaveEncashment):
   #   self.set_salary_structure_assignment()
   #   self.get_leave_details_for_encashment()
 
-  # def before_save(self):
-  #   if self.encashment_days:
-  #     self.set_encashment_amount()
+  def before_save(self):
+    if self.encashment_days:
+      self.set_encashment_amount()
 
 
   def set_salary_structure_assignment(self):
