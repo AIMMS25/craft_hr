@@ -29,4 +29,5 @@ class Bed(Document):
 			)
 
 			if accommodation_docs:
+				# update_counts(accommodation_docs[0].name, save_doc=True)
 				update_counts(accommodation_docs[0].name, save_doc=True)

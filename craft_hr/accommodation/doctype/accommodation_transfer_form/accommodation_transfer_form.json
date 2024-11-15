@@ -1,27 +1,35 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:ATF-{employee}-{accommodation_type}-{####}",
  "creation": "2024-09-19 13:26:14.960859",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "employee",
+  "accommodation_date",
   "accommodation_info",
   "column_break_zhlj",
   "accommodation_type",
-  "details_section",
-  "from_column",
+  "gate_pass",
+  "locker_key",
+  "from_section",
+  "column_break_smxo",
   "from_building_name",
+  "column_break_hfwt",
   "from_floor_no",
+  "column_break_qiyl",
   "from_room_no",
+  "column_break_cdvr",
   "from_bed_no",
-  "to_column",
+  "to_section",
   "to_building_name",
+  "column_break_wcnt",
   "to_floor_no",
+  "column_break_cjou",
   "to_room_no",
-  "to_bed_no",
-  "section_break_ajzq",
-  "allocations"
+  "column_break_cvzj",
+  "to_bed_no"
  ],
  "fields": [
   {
@@ -38,12 +46,6 @@
   {
    "fieldname": "column_break_zhlj",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "allocations",
-   "fieldtype": "Table",
-   "label": "Allocations",
-   "options": "Accommodation Transfer Item"
   },
   {
    "fieldname": "accommodation_type",
@@ -84,22 +86,6 @@
    "options": "Bed"
   },
   {
-   "fieldname": "details_section",
-   "fieldtype": "Section Break",
-   "label": "Details"
-  },
-  {
-   "depends_on": "eval:doc.accommodation_type == \"Allocation\"",
-   "fieldname": "from_column",
-   "fieldtype": "Column Break",
-   "label": "From"
-  },
-  {
-   "fieldname": "to_column",
-   "fieldtype": "Column Break",
-   "label": "To"
-  },
-  {
    "fieldname": "to_building_name",
    "fieldtype": "Link",
    "label": "Building Name",
@@ -124,16 +110,70 @@
    "options": "Bed"
   },
   {
-   "fieldname": "section_break_ajzq",
-   "fieldtype": "Section Break"
+   "fieldname": "from_section",
+   "fieldtype": "Section Break",
+   "label": "From"
+  },
+  {
+   "depends_on": "eval:doc.accommodation_type == \"Allocation\"",
+   "fieldname": "column_break_smxo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hfwt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qiyl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cdvr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.accommodation_type !=\"Exit\";",
+   "fieldname": "to_section",
+   "fieldtype": "Section Break",
+   "label": "To"
+  },
+  {
+   "fieldname": "column_break_wcnt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cjou",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cvzj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "accommodation_date",
+   "fieldtype": "Date",
+   "label": "Accommodation Date"
+  },
+  {
+   "fieldname": "gate_pass",
+   "fieldtype": "Select",
+   "label": "Gate Pass",
+   "options": "\nAllocated\nReturn"
+  },
+  {
+   "fieldname": "locker_key",
+   "fieldtype": "Select",
+   "label": "Locker Key",
+   "options": "\nAllocated\nReturn"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-20 14:06:57.822182",
+ "modified": "2024-11-15 13:01:04.267533",
  "modified_by": "Administrator",
  "module": "Accommodation",
  "name": "Accommodation Transfer Form",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
