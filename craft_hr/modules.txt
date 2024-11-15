@@ -1,2 +1,5 @@
 Craft HR
 OT Mgmt
+Documents
+Accommodation
+Travel
