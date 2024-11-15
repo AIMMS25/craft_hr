@@ -1,0 +1,208 @@
+{
+ "_comments": "[]",
+ "_liked_by": "[]",
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:HR-ATB-{YY}-{MM}-{####}",
+ "creation": "2024-03-05 11:41:29.859051",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "column_break_crexs",
+  "date",
+  "trip_type",
+  "section_break_dwhk9",
+  "from",
+  "departure_date",
+  "desired_airlines",
+  "ticket_eligibility",
+  "currency",
+  "column_break_u0uf0",
+  "to",
+  "return_date",
+  "booking_mode",
+  "debited_company",
+  "fare",
+  "section_break_kz7hc",
+  "visiting_company",
+  "reason_for_visit",
+  "column_break_cylhn",
+  "card_details",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_crexs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "trip_type",
+   "fieldtype": "Select",
+   "label": "Trip Type",
+   "options": "\nOne Way"
+  },
+  {
+   "fieldname": "section_break_dwhk9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Departure Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "desired_airlines",
+   "fieldtype": "Data",
+   "label": "Desired Airlines"
+  },
+  {
+   "fieldname": "ticket_eligibility",
+   "fieldtype": "Select",
+   "label": "Ticket Eligibility",
+   "options": "\nEligible-Round Trip"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "column_break_u0uf0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "label": "Return Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "booking_mode",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Booking Mode",
+   "options": "\nAwesome Travel and Tourism"
+  },
+  {
+   "fieldname": "debited_company",
+   "fieldtype": "Select",
+   "label": "Debited Company",
+   "options": "\nAlaska Radiator"
+  },
+  {
+   "fieldname": "fare",
+   "fieldtype": "Currency",
+   "label": "Fare",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_kz7hc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "visiting_company",
+   "fieldtype": "Small Text",
+   "label": "Visiting Company"
+  },
+  {
+   "fieldname": "reason_for_visit",
+   "fieldtype": "Small Text",
+   "label": "Reason for Visit"
+  },
+  {
+   "fieldname": "column_break_cylhn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "card_details",
+   "fieldtype": "Small Text",
+   "label": "Credit Card Details"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Air Ticket Booking",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-07 10:23:00.108798",
+ "modified_by": "Administrator",
+ "module": "Travel",
+ "name": "Air Ticket Booking",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,262 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:DAF-{employee}-{####}",
+ "creation": "2024-03-13 13:46:57.841652",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "designation",
+  "department",
+  "head_of_the_department",
+  "column_break_ulwwq",
+  "gender",
+  "nationality",
+  "visa_expiry_date",
+  "visadocument_type",
+  "column_break_dyd8z",
+  "date_of_joining",
+  "company",
+  "type_of_contract",
+  "deployment_location",
+  "status",
+  "section_break_qas9h",
+  "marital_status",
+  "mothers_name",
+  "column_break_i03yp",
+  "photo",
+  "section_break_xspd3",
+  "local_no",
+  "column_break_xekvt",
+  "home_country_no",
+  "section_break_c3fsa",
+  "custom_base_pay",
+  "custom_hra_amount",
+  "custom_company_mess_allowance",
+  "column_break_gxib5",
+  "custom_fuel_allowance",
+  "custom_company_other_allowance",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "head_of_the_department",
+   "fieldtype": "Link",
+   "label": "Head of the Department",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_ulwwq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.gender",
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.country",
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality",
+   "read_only": 1
+  },
+  {
+   "fieldname": "visa_expiry_date",
+   "fieldtype": "Date",
+   "label": "Visa Expiry Date"
+  },
+  {
+   "fieldname": "visadocument_type",
+   "fieldtype": "Select",
+   "label": "Visa/Document Type",
+   "options": "\nEmployment Visa\nFamily Sponsor\nWork Permit\nTemporary Work Permit"
+  },
+  {
+   "fieldname": "column_break_dyd8z",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "type_of_contract",
+   "fieldtype": "Select",
+   "label": "Type of Contract",
+   "options": "\nLimited\nUnlimited"
+  },
+  {
+   "fieldname": "deployment_location",
+   "fieldtype": "Data",
+   "label": "Deployment Location"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nApplied\nIssued"
+  },
+  {
+   "fieldname": "section_break_qas9h",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "\nSingle\nMarried"
+  },
+  {
+   "fieldname": "mothers_name",
+   "fieldtype": "Data",
+   "label": "Mother's Name"
+  },
+  {
+   "fieldname": "column_break_i03yp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "section_break_xspd3",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "local_no",
+   "fieldtype": "Phone",
+   "label": "Local No"
+  },
+  {
+   "fieldname": "column_break_xekvt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "home_country_no",
+   "fieldtype": "Phone",
+   "label": "Home Country No"
+  },
+  {
+   "fieldname": "section_break_c3fsa",
+   "fieldtype": "Section Break",
+   "label": "Salary Details"
+  },
+  {
+   "fetch_from": "employee.custom_base_pay",
+   "fieldname": "custom_base_pay",
+   "fieldtype": "Currency",
+   "label": "Basic Salary"
+  },
+  {
+   "fetch_from": "employee.custom_hra_amount",
+   "fieldname": "custom_hra_amount",
+   "fieldtype": "Currency",
+   "label": "HRA Amount"
+  },
+  {
+   "fetch_from": "employee.custom_company_mess_allowance",
+   "fieldname": "custom_company_mess_allowance",
+   "fieldtype": "Currency",
+   "label": "Mess Allowance"
+  },
+  {
+   "fieldname": "column_break_gxib5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.custom_fuel_allowance",
+   "fieldname": "custom_fuel_allowance",
+   "fieldtype": "Currency",
+   "label": "Vehicle/Fuel Allowance"
+  },
+  {
+   "fetch_from": "employee.custom_company_other_allowance",
+   "fieldname": "custom_company_other_allowance",
+   "fieldtype": "Currency",
+   "label": "Other Allowance"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Document Application Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-07 10:23:00.923116",
+ "modified_by": "Administrator",
+ "module": "Documents",
+ "name": "Document Application Form",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

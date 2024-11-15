@@ -1,0 +1,226 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:employee_name",
+ "creation": "2024-03-13 12:07:08.710980",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "designation",
+  "department",
+  "column_break_unido",
+  "date",
+  "company",
+  "section_break_t7t4r",
+  "type_of_document",
+  "withdrawal",
+  "specify",
+  "passport_out",
+  "passport_in",
+  "column_break_emhdt",
+  "reason",
+  "specify_reason",
+  "passport_status",
+  "section_break_ziesn",
+  "req_days",
+  "approved_by",
+  "approver_name",
+  "column_break_rgw72",
+  "approved_days",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_unido",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_t7t4r",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "type_of_document",
+   "fieldtype": "Select",
+   "label": "Type of Document",
+   "options": "\nPassport\nOthers",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.type_of_document == \"Passport\"",
+   "fieldname": "withdrawal",
+   "fieldtype": "Check",
+   "label": "Withdrawal"
+  },
+  {
+   "depends_on": "eval:doc.type_of_document == \"Others\"",
+   "fieldname": "specify",
+   "fieldtype": "Data",
+   "label": "Specify Document Type"
+  },
+  {
+   "depends_on": "eval:doc.type_of_document == \"Passport\" && doc.withdrawal == 1",
+   "fieldname": "passport_out",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Passport Out Date"
+  },
+  {
+   "depends_on": "eval:doc.type_of_document == \"Passport\" && doc.withdrawal == 1",
+   "fieldname": "passport_in",
+   "fieldtype": "Date",
+   "label": "Passport In Date"
+  },
+  {
+   "fieldname": "column_break_emhdt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.type_of_document == \"Passport\" && doc.withdrawal == 1",
+   "fieldname": "reason",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Reason",
+   "options": "\nAnnual Leave\nEmergency Leave\nRenewal of Visa\nRenewal of Passport\nVisa Cancellation\nConsulate Work\nOther"
+  },
+  {
+   "depends_on": "eval:doc.type_of_document ==\"Others\"",
+   "fieldname": "specify_reason",
+   "fieldtype": "Data",
+   "label": "Reason"
+  },
+  {
+   "depends_on": "eval:doc.type_of_document == \"Passport\" && doc.withdrawal == 1",
+   "fieldname": "passport_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Passport Status",
+   "options": "\nIn custody of Employee\nWith the Company"
+  },
+  {
+   "fieldname": "section_break_ziesn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "req_days",
+   "fieldtype": "Data",
+   "label": "Required Days"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Approved By",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "approved_by.employee_name",
+   "fieldname": "approver_name",
+   "fieldtype": "Data",
+   "label": "Approver Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rgw72",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approved_days",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Approved Days"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Document Request Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-07 10:23:02.334297",
+ "modified_by": "Administrator",
+ "module": "Documents",
+ "name": "Document Request Form",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
