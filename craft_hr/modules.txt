@@ -3,3 +3,4 @@ OT Mgmt
 Documents
 Travel
 Accommodation
+Safety Module

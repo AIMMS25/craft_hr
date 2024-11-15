@@ -1,0 +1,361 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-01 11:05:11.371609",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "category",
+  "applicant_name",
+  "column_break_mjxjg",
+  "date",
+  "general_details_section",
+  "project_name",
+  "job_number",
+  "column_break_6glbs",
+  "start_time",
+  "end_time",
+  "description_of_activity_section",
+  "hot_work",
+  "cold_work",
+  "added_permits_section",
+  "confined_space_permit",
+  "confined_no",
+  "column_break_gheon",
+  "lifting_permit",
+  "lifting_permit_no",
+  "section_break_9cbgh",
+  "arealocation",
+  "equipment_to_be_used",
+  "precautions_section",
+  "method_statement",
+  "appropriate_task",
+  "emergency_procedure",
+  "competency_certificates",
+  "column_break_z0wfz",
+  "daily_tbt",
+  "suitable_lighting",
+  "supervisor_present",
+  "additional_precautions",
+  "product_verification_section",
+  "production_in_charge",
+  "verification",
+  "production_incharge_name",
+  "column_break_sgb3l",
+  "date1",
+  "receiving_authority_section",
+  "receiving_applicant_name",
+  "designation1",
+  "column_break_hieo4",
+  "date2",
+  "receiver_signature",
+  "issuing_authority_section",
+  "issuing_authorizer_name",
+  "designation2",
+  "column_break_m5gcq",
+  "date3",
+  "authorizer_signature",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "\nACE\nSub Contractor"
+  },
+  {
+   "fieldname": "applicant_name",
+   "fieldtype": "Data",
+   "label": "Applicant Name"
+  },
+  {
+   "fieldname": "column_break_mjxjg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "general_details_section",
+   "fieldtype": "Section Break",
+   "label": "General Details"
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name"
+  },
+  {
+   "fieldname": "job_number",
+   "fieldtype": "Data",
+   "label": "Job Number"
+  },
+  {
+   "fieldname": "column_break_6glbs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "description_of_activity_section",
+   "fieldtype": "Section Break",
+   "label": "Description of Activity"
+  },
+  {
+   "default": "0",
+   "fieldname": "hot_work",
+   "fieldtype": "Check",
+   "label": "Hot  Work"
+  },
+  {
+   "default": "0",
+   "fieldname": "cold_work",
+   "fieldtype": "Check",
+   "label": "Cold  Work"
+  },
+  {
+   "fieldname": "added_permits_section",
+   "fieldtype": "Section Break",
+   "label": "Added Permits"
+  },
+  {
+   "default": "0",
+   "fieldname": "confined_space_permit",
+   "fieldtype": "Check",
+   "label": "Confined Space Permit"
+  },
+  {
+   "depends_on": "confined_space_permit",
+   "fieldname": "confined_no",
+   "fieldtype": "Link",
+   "label": "No",
+   "options": "Confined Space Entry Permit"
+  },
+  {
+   "fieldname": "column_break_gheon",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "lifting_permit",
+   "fieldtype": "Check",
+   "label": "Lifting Permit"
+  },
+  {
+   "depends_on": "lifting_permit",
+   "fieldname": "lifting_permit_no",
+   "fieldtype": "Link",
+   "label": "No",
+   "options": "Lifting Permit"
+  },
+  {
+   "fieldname": "section_break_9cbgh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "arealocation",
+   "fieldtype": "Data",
+   "label": "Area/Location"
+  },
+  {
+   "fieldname": "equipment_to_be_used",
+   "fieldtype": "Data",
+   "label": "Equipment to be used"
+  },
+  {
+   "fieldname": "precautions_section",
+   "fieldtype": "Section Break",
+   "label": "Precautions"
+  },
+  {
+   "fieldname": "method_statement",
+   "fieldtype": "Select",
+   "label": "Method statement and risk assessment performed and explain to work force",
+   "options": "\nYes\nNo\nNA"
+  },
+  {
+   "fieldname": "appropriate_task",
+   "fieldtype": "Select",
+   "label": "Appropriate task specific PPE\u2019s are issued to operatives",
+   "options": "\nYes\nNo\nNA"
+  },
+  {
+   "fieldname": "emergency_procedure",
+   "fieldtype": "Select",
+   "label": "Emergency procedure is communicated to the operatives",
+   "options": "\nYes\nNo\nNA"
+  },
+  {
+   "fieldname": "competency_certificates",
+   "fieldtype": "Select",
+   "label": "Equipment\u2019s and operatives having necessary competency certificates",
+   "options": "\nYes\nNo\nNA"
+  },
+  {
+   "fieldname": "column_break_z0wfz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "daily_tbt",
+   "fieldtype": "Select",
+   "label": "If not, Daily TBT conducted and records need to be attached with this permit",
+   "options": "\nYes\nNo\nNA"
+  },
+  {
+   "fieldname": "suitable_lighting",
+   "fieldtype": "Select",
+   "label": "Suitable lighting are provided (for night works / inside enclosures)",
+   "options": "\nYes\nNo\nNA"
+  },
+  {
+   "fieldname": "supervisor_present",
+   "fieldtype": "Select",
+   "label": "Supervisor present at duration of the work",
+   "options": "\nYes\nNo\nNA"
+  },
+  {
+   "fieldname": "additional_precautions",
+   "fieldtype": "Small Text",
+   "label": "Additional precautions required"
+  },
+  {
+   "fieldname": "product_verification_section",
+   "fieldtype": "Section Break",
+   "label": "Production Verification"
+  },
+  {
+   "fieldname": "production_in_charge",
+   "fieldtype": "Link",
+   "label": "Production In charge",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "verification",
+   "fieldtype": "Small Text",
+   "label": "Verification"
+  },
+  {
+   "fetch_from": "production_in_charge.employee_name",
+   "fieldname": "production_incharge_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sgb3l",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date1",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "receiving_authority_section",
+   "fieldtype": "Section Break",
+   "label": "Receiving Authority"
+  },
+  {
+   "fieldname": "receiving_applicant_name",
+   "fieldtype": "Data",
+   "label": "Receiving Applicant Name"
+  },
+  {
+   "fieldname": "designation1",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "column_break_hieo4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date2",
+   "fieldtype": "Datetime",
+   "label": "Date"
+  },
+  {
+   "fieldname": "receiver_signature",
+   "fieldtype": "Attach Image",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "issuing_authority_section",
+   "fieldtype": "Section Break",
+   "label": "Issuing Authority"
+  },
+  {
+   "fieldname": "issuing_authorizer_name",
+   "fieldtype": "Data",
+   "label": "Authorizer Name"
+  },
+  {
+   "fieldname": "designation2",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "column_break_m5gcq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date3",
+   "fieldtype": "Datetime",
+   "label": "Date"
+  },
+  {
+   "fieldname": "authorizer_signature",
+   "fieldtype": "Attach Image",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "General Work Permit",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-15 17:11:38.441407",
+ "modified_by": "Administrator",
+ "module": "Safety Module",
+ "name": "General Work Permit",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,356 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-19 13:24:36.935716",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "general_information_section",
+  "facility",
+  "covering_days_from",
+  "to",
+  "column_break_pevec",
+  "compiled_by",
+  "compiled_byfull_name",
+  "man_hours_information_section",
+  "number_of_employees",
+  "injury_free_day",
+  "column_break_xckl1",
+  "man_hours_worked_for_the_week",
+  "no_of_safety_personnel_on_site",
+  "section_break_hsmep",
+  "total_man_hours_worked_ptd",
+  "date_of_last_lost_time_injuries_lti",
+  "lost_time_injuries_free_work_hours_ltifwh",
+  "lagging_indicators_section",
+  "first_aid",
+  "medical_treatment",
+  "restricted_work_day",
+  "heat_stress",
+  "lost_time_injury",
+  "column_break_tf6hr",
+  "fatalities",
+  "damage",
+  "fire",
+  "environmental_incidents",
+  "level_1",
+  "column_break_zo7ss",
+  "behavioural_violation",
+  "critical_violation",
+  "security_incidents",
+  "level_2",
+  "level_3",
+  "leading_indicators_section",
+  "ehs_induction_ace_employees",
+  "ehs_induction_sub_contractor",
+  "ehs_induction_visitor",
+  "ehs_meeting",
+  "tool_box_talk",
+  "site_crew_meeting",
+  "site_specific_training",
+  "column_break_nlpea",
+  "near_miss__spo",
+  "ehs_site_walk",
+  "work_permits",
+  "safety_bulletin",
+  "ehs_inspection",
+  "emergency_drills",
+  "safety_audit",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "general_information_section",
+   "fieldtype": "Section Break",
+   "label": "General Information"
+  },
+  {
+   "fieldname": "facility",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Facility ",
+   "options": "Company"
+  },
+  {
+   "fieldname": "covering_days_from",
+   "fieldtype": "Date",
+   "label": "Covering Days From"
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Date",
+   "label": "To"
+  },
+  {
+   "fieldname": "column_break_pevec",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "compiled_by",
+   "fieldtype": "Link",
+   "label": "Compiled By",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "compiled_by.employee_name",
+   "fetch_if_empty": 1,
+   "fieldname": "compiled_byfull_name",
+   "fieldtype": "Data",
+   "label": "Compiled By(Full Name)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "man_hours_information_section",
+   "fieldtype": "Section Break",
+   "label": "Man Hours Information"
+  },
+  {
+   "fieldname": "number_of_employees",
+   "fieldtype": "Data",
+   "label": "Number of Employees"
+  },
+  {
+   "fieldname": "injury_free_day",
+   "fieldtype": "Data",
+   "label": "Injury Free Day"
+  },
+  {
+   "fieldname": "column_break_xckl1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "man_hours_worked_for_the_week",
+   "fieldtype": "Data",
+   "label": "MAN HOURS WORKED FOR THE WEEK"
+  },
+  {
+   "fieldname": "no_of_safety_personnel_on_site",
+   "fieldtype": "Data",
+   "label": "No of safety Personnel on site"
+  },
+  {
+   "fieldname": "section_break_hsmep",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_man_hours_worked_ptd",
+   "fieldtype": "Data",
+   "label": "TOTAL MAN HOURS WORKED (PTD)"
+  },
+  {
+   "fieldname": "date_of_last_lost_time_injuries_lti",
+   "fieldtype": "Data",
+   "label": "DATE OF LAST LOST TIME INJURIES (LTI)"
+  },
+  {
+   "fieldname": "lost_time_injuries_free_work_hours_ltifwh",
+   "fieldtype": "Data",
+   "label": "LOST TIME INJURIES FREE WORK HOURS (LTIFWH)"
+  },
+  {
+   "fieldname": "lagging_indicators_section",
+   "fieldtype": "Section Break",
+   "label": "Lagging Indicators"
+  },
+  {
+   "fieldname": "first_aid",
+   "fieldtype": "Data",
+   "label": "FIRST AID"
+  },
+  {
+   "fieldname": "medical_treatment",
+   "fieldtype": "Data",
+   "label": "MEDICAL TREATMENT"
+  },
+  {
+   "fieldname": "restricted_work_day",
+   "fieldtype": "Data",
+   "label": "RESTRICTED WORK DAY"
+  },
+  {
+   "fieldname": "heat_stress",
+   "fieldtype": "Data",
+   "label": "HEAT STRESS"
+  },
+  {
+   "fieldname": "lost_time_injury",
+   "fieldtype": "Data",
+   "label": "LOST TIME INJURY"
+  },
+  {
+   "fieldname": "column_break_tf6hr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fatalities",
+   "fieldtype": "Data",
+   "label": "FATALITIES"
+  },
+  {
+   "fieldname": "damage",
+   "fieldtype": "Data",
+   "label": "DAMAGE"
+  },
+  {
+   "fieldname": "fire",
+   "fieldtype": "Data",
+   "label": "FIRE"
+  },
+  {
+   "fieldname": "environmental_incidents",
+   "fieldtype": "Data",
+   "label": "ENVIRONMENTAL INCIDENTS"
+  },
+  {
+   "fieldname": "level_1",
+   "fieldtype": "Data",
+   "label": "Level 1"
+  },
+  {
+   "fieldname": "column_break_zo7ss",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "behavioural_violation",
+   "fieldtype": "Data",
+   "label": "BEHAVIOURAL VIOLATION"
+  },
+  {
+   "fieldname": "critical_violation",
+   "fieldtype": "Data",
+   "label": "CRITICAL VIOLATION"
+  },
+  {
+   "fieldname": "security_incidents",
+   "fieldtype": "Data",
+   "label": "SECURITY INCIDENTS"
+  },
+  {
+   "fieldname": "level_2",
+   "fieldtype": "Data",
+   "label": "Level 2"
+  },
+  {
+   "fieldname": "level_3",
+   "fieldtype": "Data",
+   "label": "Level 3"
+  },
+  {
+   "fieldname": "leading_indicators_section",
+   "fieldtype": "Section Break",
+   "label": "Leading Indicators"
+  },
+  {
+   "fieldname": "ehs_induction_ace_employees",
+   "fieldtype": "Data",
+   "label": "EHS INDUCTION (ACE EMPLOYEES)"
+  },
+  {
+   "fieldname": "ehs_induction_sub_contractor",
+   "fieldtype": "Data",
+   "label": "EHS INDUCTION (SUB CONTRACTOR)"
+  },
+  {
+   "fieldname": "ehs_induction_visitor",
+   "fieldtype": "Data",
+   "label": "EHS INDUCTION (VISITOR)"
+  },
+  {
+   "fieldname": "ehs_meeting",
+   "fieldtype": "Data",
+   "label": "EHS MEETING"
+  },
+  {
+   "fieldname": "tool_box_talk",
+   "fieldtype": "Data",
+   "label": "TOOL BOX TALK"
+  },
+  {
+   "fieldname": "site_crew_meeting",
+   "fieldtype": "Data",
+   "label": "SITE CREW MEETING"
+  },
+  {
+   "fieldname": "site_specific_training",
+   "fieldtype": "Data",
+   "label": "SITE SPECIFIC TRAINING"
+  },
+  {
+   "fieldname": "column_break_nlpea",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "near_miss__spo",
+   "fieldtype": "Data",
+   "label": "NEAR MISS / SPO"
+  },
+  {
+   "fieldname": "ehs_site_walk",
+   "fieldtype": "Data",
+   "label": "EHS SITE WALK"
+  },
+  {
+   "fieldname": "work_permits",
+   "fieldtype": "Data",
+   "label": "WORK PERMITS"
+  },
+  {
+   "fieldname": "safety_bulletin",
+   "fieldtype": "Data",
+   "label": "SAFETY BULLETIN"
+  },
+  {
+   "fieldname": "ehs_inspection",
+   "fieldtype": "Data",
+   "label": "EHS INSPECTION"
+  },
+  {
+   "fieldname": "emergency_drills",
+   "fieldtype": "Data",
+   "label": "EMERGENCY DRILLS"
+  },
+  {
+   "fieldname": "safety_audit",
+   "fieldtype": "Data",
+   "label": "SAFETY AUDIT"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Weekly EHS Static Report",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-15 17:11:45.557454",
+ "modified_by": "Administrator",
+ "module": "Safety Module",
+ "name": "Weekly EHS Static Report",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

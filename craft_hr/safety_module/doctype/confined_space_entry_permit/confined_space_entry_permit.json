@@ -1,0 +1,532 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-27 13:21:15.394930",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "permit_requester_name",
+  "name1",
+  "project_name",
+  "job_number",
+  "arealocation",
+  "column_break_0pnig",
+  "date",
+  "work_start_time",
+  "work_finish_time",
+  "section_break_zgubo",
+  "column_break_anrxn",
+  "hot_work",
+  "column_break_oqk1x",
+  "cold_work",
+  "column_break_a2wjq",
+  "other1",
+  "confined_space_hazard_assessment_section",
+  "oxygen_deficiency_enriched_atmosphere",
+  "carbon_monoxide",
+  "flammable_combustible",
+  "corrosion",
+  "painting_or_solvent_fumes",
+  "column_break_loks2",
+  "weldingburning_fumes",
+  "engulfment",
+  "protruding_objects",
+  "fall",
+  "slippery_hazards",
+  "column_break_lsvvz",
+  "stored_procedure",
+  "moving_mechanical_parts",
+  "exposed_electrical_parts",
+  "hot_equipmentssurface",
+  "other2",
+  "safety_equipment_requirement_section",
+  "respirator_specific_type",
+  "fire_extinguisher",
+  "harness_and_life_line_lanyard",
+  "mechanical_retrieval_devices",
+  "column_break_de8ti",
+  "gfci_protection",
+  "tripod",
+  "portable_lighting",
+  "special_clothings",
+  "column_break_507mz",
+  "forced_air_ventilation",
+  "ladders",
+  "goggles",
+  "others",
+  "section_break_jp6l0",
+  "visual",
+  "column_break_abhai",
+  "voice",
+  "column_break_m5jus",
+  "radio",
+  "section_break_blx1j",
+  "pre_entry_and_periodic_atmoshpere_testing_section",
+  "meter_calibrated",
+  "column_break_bjisb",
+  "meter_number",
+  "column_break_r5ucq",
+  "space_sample_by",
+  "section_break_lc5rb",
+  "atmosphere_reading_template",
+  "reading_table",
+  "receiving_authority_section",
+  "applicant",
+  "applicant_name",
+  "column_break_2lpsr",
+  "date1",
+  "issuing_authority__ace_hse_department_section",
+  "authorizer",
+  "authorizer_name",
+  "column_break_wjqqh",
+  "date2",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "permit_requester_name",
+   "fieldtype": "Link",
+   "label": "Permit Requester",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "permit_requester_name.employee_name",
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name"
+  },
+  {
+   "fieldname": "job_number",
+   "fieldtype": "Int",
+   "label": "Job Number"
+  },
+  {
+   "fieldname": "arealocation",
+   "fieldtype": "Data",
+   "label": "Area/Location"
+  },
+  {
+   "fieldname": "column_break_0pnig",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "work_start_time",
+   "fieldtype": "Time",
+   "label": "Work Start Time"
+  },
+  {
+   "fieldname": "work_finish_time",
+   "fieldtype": "Time",
+   "label": "Work Finish Time"
+  },
+  {
+   "fieldname": "section_break_zgubo",
+   "fieldtype": "Section Break",
+   "label": "Description of Activity"
+  },
+  {
+   "fieldname": "column_break_anrxn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "hot_work",
+   "fieldtype": "Check",
+   "label": "Hot Work"
+  },
+  {
+   "fieldname": "column_break_oqk1x",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cold_work",
+   "fieldtype": "Check",
+   "label": "Cold Work"
+  },
+  {
+   "fieldname": "column_break_a2wjq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "other1",
+   "fieldtype": "Check",
+   "label": "Other"
+  },
+  {
+   "fieldname": "confined_space_hazard_assessment_section",
+   "fieldtype": "Section Break",
+   "label": "Confined space hazard assessment"
+  },
+  {
+   "default": "0",
+   "fieldname": "oxygen_deficiency_enriched_atmosphere",
+   "fieldtype": "Check",
+   "label": "Oxygen deficiency/ enriched atmosphere"
+  },
+  {
+   "default": "0",
+   "fieldname": "carbon_monoxide",
+   "fieldtype": "Check",
+   "label": "Carbon Monoxide"
+  },
+  {
+   "default": "0",
+   "fieldname": "flammable_combustible",
+   "fieldtype": "Check",
+   "label": "Flammable Combustible"
+  },
+  {
+   "default": "0",
+   "fieldname": "corrosion",
+   "fieldtype": "Check",
+   "label": "Corrosion"
+  },
+  {
+   "default": "0",
+   "fieldname": "painting_or_solvent_fumes",
+   "fieldtype": "Check",
+   "label": "Painting or solvent fumes"
+  },
+  {
+   "fieldname": "column_break_loks2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "weldingburning_fumes",
+   "fieldtype": "Check",
+   "label": "Welding/Burning fumes"
+  },
+  {
+   "default": "0",
+   "fieldname": "engulfment",
+   "fieldtype": "Check",
+   "label": "Engulfment"
+  },
+  {
+   "default": "0",
+   "fieldname": "protruding_objects",
+   "fieldtype": "Check",
+   "label": "Protruding objects"
+  },
+  {
+   "default": "0",
+   "fieldname": "fall",
+   "fieldtype": "Check",
+   "label": "Fall"
+  },
+  {
+   "default": "0",
+   "fieldname": "slippery_hazards",
+   "fieldtype": "Check",
+   "label": "Slippery hazards"
+  },
+  {
+   "fieldname": "column_break_lsvvz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "stored_procedure",
+   "fieldtype": "Check",
+   "label": "Stored Procedure"
+  },
+  {
+   "default": "0",
+   "fieldname": "moving_mechanical_parts",
+   "fieldtype": "Check",
+   "label": "Moving mechanical parts"
+  },
+  {
+   "default": "0",
+   "fieldname": "exposed_electrical_parts",
+   "fieldtype": "Check",
+   "label": "Exposed electrical parts"
+  },
+  {
+   "default": "0",
+   "fieldname": "hot_equipmentssurface",
+   "fieldtype": "Check",
+   "label": "Hot equipments/surface"
+  },
+  {
+   "default": "0",
+   "fieldname": "other2",
+   "fieldtype": "Check",
+   "label": "Other"
+  },
+  {
+   "fieldname": "safety_equipment_requirement_section",
+   "fieldtype": "Section Break",
+   "label": "Safety equipment Requirement"
+  },
+  {
+   "default": "0",
+   "fieldname": "respirator_specific_type",
+   "fieldtype": "Check",
+   "label": "Respirator Specific type"
+  },
+  {
+   "default": "0",
+   "fieldname": "fire_extinguisher",
+   "fieldtype": "Check",
+   "label": "Fire Extinguisher"
+  },
+  {
+   "default": "0",
+   "fieldname": "harness_and_life_line_lanyard",
+   "fieldtype": "Check",
+   "label": "Harness and Life line lanyard"
+  },
+  {
+   "default": "0",
+   "fieldname": "mechanical_retrieval_devices",
+   "fieldtype": "Check",
+   "label": "Mechanical retrieval devices"
+  },
+  {
+   "fieldname": "column_break_de8ti",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "gfci_protection",
+   "fieldtype": "Check",
+   "label": "GFCI protection"
+  },
+  {
+   "default": "0",
+   "fieldname": "tripod",
+   "fieldtype": "Check",
+   "label": "Tripod"
+  },
+  {
+   "default": "0",
+   "fieldname": "portable_lighting",
+   "fieldtype": "Check",
+   "label": "Portable lighting"
+  },
+  {
+   "default": "0",
+   "fieldname": "special_clothings",
+   "fieldtype": "Check",
+   "label": "Special clothing's"
+  },
+  {
+   "fieldname": "column_break_507mz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "forced_air_ventilation",
+   "fieldtype": "Check",
+   "label": "Forced air ventilation"
+  },
+  {
+   "default": "0",
+   "fieldname": "ladders",
+   "fieldtype": "Check",
+   "label": "Ladders "
+  },
+  {
+   "default": "0",
+   "fieldname": "goggles",
+   "fieldtype": "Check",
+   "label": "Goggles"
+  },
+  {
+   "default": "0",
+   "fieldname": "others",
+   "fieldtype": "Check",
+   "label": "Others"
+  },
+  {
+   "fieldname": "section_break_jp6l0",
+   "fieldtype": "Section Break",
+   "label": "Observer/ Entrant communication"
+  },
+  {
+   "default": "0",
+   "fieldname": "visual",
+   "fieldtype": "Check",
+   "label": "Visual"
+  },
+  {
+   "fieldname": "column_break_abhai",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "voice",
+   "fieldtype": "Check",
+   "label": "Voice"
+  },
+  {
+   "fieldname": "column_break_m5jus",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "radio",
+   "fieldtype": "Check",
+   "label": "Radio"
+  },
+  {
+   "fieldname": "section_break_blx1j",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pre_entry_and_periodic_atmoshpere_testing_section",
+   "fieldtype": "Section Break",
+   "label": "Pre Entry and periodic atmoshpere testing"
+  },
+  {
+   "default": "0",
+   "fieldname": "meter_calibrated",
+   "fieldtype": "Check",
+   "label": "Meter Calibrated"
+  },
+  {
+   "fieldname": "column_break_bjisb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "meter_calibrated",
+   "fieldname": "meter_number",
+   "fieldtype": "Data",
+   "label": "Meter Number"
+  },
+  {
+   "fieldname": "column_break_r5ucq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "meter_calibrated",
+   "fieldname": "space_sample_by",
+   "fieldtype": "Data",
+   "label": "Space sample by"
+  },
+  {
+   "fieldname": "section_break_lc5rb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "atmosphere_reading_template",
+   "fieldtype": "Link",
+   "label": "Atmosphere Reading Template",
+   "options": "Atmosphere Reading Template"
+  },
+  {
+   "fieldname": "reading_table",
+   "fieldtype": "Table",
+   "label": "Reading Table",
+   "options": "Atmosphere Reading Table"
+  },
+  {
+   "fieldname": "receiving_authority_section",
+   "fieldtype": "Section Break",
+   "label": "Receiving Authority"
+  },
+  {
+   "fieldname": "applicant",
+   "fieldtype": "Link",
+   "label": "Applicant",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "applicant.employee_name",
+   "fieldname": "applicant_name",
+   "fieldtype": "Data",
+   "label": "Applicant Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2lpsr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date1",
+   "fieldtype": "Datetime",
+   "label": "Date"
+  },
+  {
+   "fieldname": "issuing_authority__ace_hse_department_section",
+   "fieldtype": "Section Break",
+   "label": "Issuing Authority  (ACE HSE Department)"
+  },
+  {
+   "fieldname": "authorizer",
+   "fieldtype": "Link",
+   "label": "Authorizer",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "authorizer.employee_name",
+   "fieldname": "authorizer_name",
+   "fieldtype": "Data",
+   "label": "Authorizer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wjqqh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date2",
+   "fieldtype": "Datetime",
+   "label": "Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Confined Space Entry Permit",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-15 17:11:37.040417",
+ "modified_by": "Administrator",
+ "module": "Safety Module",
+ "name": "Confined Space Entry Permit",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

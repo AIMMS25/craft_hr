@@ -1,0 +1,170 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-02 16:00:23.013442",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "designation",
+  "inducted_by",
+  "full_name",
+  "company",
+  "attachment",
+  "column_break_18ph6",
+  "date",
+  "company_name",
+  "section_break_naisi",
+  "eidpassport_no",
+  "column_break_tpu6b",
+  "eidpassport_validity",
+  "section_break_12xk1",
+  "purpose_visit",
+  "location",
+  "column_break_xbera",
+  "remarks",
+  "signature",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "inducted_by",
+   "fieldtype": "Link",
+   "label": "Inducted By",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "inducted_by.employee_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Inducted By (Full Name)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "column_break_18ph6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "section_break_naisi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "eidpassport_no",
+   "fieldtype": "Data",
+   "label": "EID/Passport No"
+  },
+  {
+   "fieldname": "column_break_tpu6b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "eidpassport_validity",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "EID/Passport Validity"
+  },
+  {
+   "fieldname": "section_break_12xk1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "purpose_visit",
+   "fieldtype": "Data",
+   "label": "Purpose of Visit"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Facility Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "column_break_xbera",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Attach",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Visitor Induction",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-15 17:11:46.611843",
+ "modified_by": "Administrator",
+ "module": "Safety Module",
+ "name": "Visitor Induction",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
