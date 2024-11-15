@@ -18,24 +18,29 @@
   {
    "fieldname": "bed_no",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Bed No",
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "employee",
    "fieldtype": "Link",
    "label": "Employee",
-   "options": "Employee"
+   "options": "Employee",
+   "read_only": 1
   },
   {
+   "default": "Vacant",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nAllocated\nVacant"
+   "options": "\nAllocated\nVacant",
+   "read_only": 1
   },
   {
    "fieldname": "room_no",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Room No",
    "options": "Room"
   },
@@ -46,19 +51,21 @@
   {
    "fieldname": "building_name",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Building Name",
    "options": "Building"
   },
   {
    "fieldname": "floor_no",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Floor No",
    "options": "Floor"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-20 11:13:59.133323",
+ "modified": "2024-11-15 12:58:52.838459",
  "modified_by": "Administrator",
  "module": "Accommodation",
  "name": "Bed",

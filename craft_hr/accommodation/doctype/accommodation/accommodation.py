@@ -49,3 +49,39 @@ def update_counts(accommodation_name, save_doc = False):
 		"bed": acc_doc.bed,
 		"building_name": acc_doc.building_name
 	}
+
+
+
+# @frappe.whitelist()
+# def update_counts(accommodation_name):
+# 	acc_doc = frappe.get_doc("Accommodation", accommodation_name)
+
+# 	if not acc_doc.building_name:
+# 		return {
+# 			"floor": 0,
+# 			"room": 0,
+# 			"bed": 0,
+# 			"building_name": acc_doc.building_name
+# 		}
+
+# 	beds = frappe.get_all(
+# 		"Bed", 
+# 		filters={"building_name": acc_doc.building_name},
+# 		fields=["floor_no", "room_no", "name"]
+# 	)
+
+# 	unique_floors = set()
+# 	unique_rooms = set()
+
+# 	for bed in beds:
+# 		unique_floors.add(bed["floor_no"])
+# 		unique_rooms.add(bed["room_no"])
+		
+
+
+# 	return {
+# 		"floor": len(unique_floors),
+# 		"room": len(unique_rooms),
+# 		"bed": len(beds), 
+# 		"building_name": acc_doc.building_name
+# 	}

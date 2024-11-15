@@ -13,18 +13,22 @@
   {
    "fieldname": "floor_no",
    "fieldtype": "Data",
-   "label": "Floor No"
+   "in_list_view": 1,
+   "label": "Floor No",
+   "reqd": 1
   },
   {
    "fieldname": "building_name",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Building Name",
-   "options": "Building"
+   "options": "Building",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-19 14:02:39.396215",
+ "modified": "2024-09-27 14:21:29.143018",
  "modified_by": "Administrator",
  "module": "Accommodation",
  "name": "Floor",
