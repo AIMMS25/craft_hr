@@ -3,7 +3,7 @@
 
 import frappe
 from frappe.model.document import Document
-from delight.delight.doctype.accommodation.accommodation import update_counts
+from craft_hr.accommodation.doctype.accommodation.accommodation import update_counts
 
 
 class Bed(Document):
