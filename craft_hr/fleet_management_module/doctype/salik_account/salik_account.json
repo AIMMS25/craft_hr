@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:account_no",
+ "creation": "2024-10-15 14:02:32.804017",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "account_no",
+  "company",
+  "opening_balance",
+  "column_break_kvdaj",
+  "date",
+  "total_transaction",
+  "total_recharged_amount",
+  "balance"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Account No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "opening_balance",
+   "fieldtype": "Float",
+   "label": "Opening Balance",
+   "options": "Currency",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_kvdaj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_transaction",
+   "fieldtype": "Float",
+   "label": "Total Transaction",
+   "options": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_recharged_amount",
+   "fieldtype": "Float",
+   "label": "Total Recharged Amount",
+   "options": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Float",
+   "label": "Balance",
+   "options": "Currency",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Salik Recharge",
+   "link_fieldname": "salik_account_no"
+  },
+  {
+   "link_doctype": "Salik Expense",
+   "link_fieldname": "account_no"
+  }
+ ],
+ "modified": "2024-11-16 09:37:29.625106",
+ "modified_by": "Administrator",
+ "module": "Fleet Management Module",
+ "name": "Salik Account",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
