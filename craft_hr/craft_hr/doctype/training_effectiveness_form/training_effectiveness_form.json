@@ -1,0 +1,288 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-16 09:29:28.413120",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_bpsz",
+  "employee",
+  "employee_name",
+  "designation",
+  "column_break_kvke",
+  "amended_from",
+  "company",
+  "department",
+  "date_of_joining",
+  "section_break_bakl",
+  "training_topic",
+  "training_category",
+  "training_period_column",
+  "from_date",
+  "to_date",
+  "basis_of_evaluation_column",
+  "case_exercise",
+  "project",
+  "observation_in_work",
+  "focus_group",
+  "reference",
+  "section_break_fnzw",
+  "rating_description",
+  "effectiveness",
+  "section_break_ovtj",
+  "learning_observed_column",
+  "learning_change",
+  "learning_evidence",
+  "column_break_swyb",
+  "behaviour_change",
+  "behaviour_evidence",
+  "column_break_lefb",
+  "kpi_change",
+  "kpi_evidence",
+  "section_break_onkf",
+  "general_comments",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_bpsz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kvke",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Training Effectiveness Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_bakl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "training_topic",
+   "fieldtype": "Data",
+   "label": "Training Topic"
+  },
+  {
+   "fieldname": "training_category",
+   "fieldtype": "Select",
+   "label": "Training Category",
+   "options": "Class Room\nOn the Job"
+  },
+  {
+   "fieldname": "training_period_column",
+   "fieldtype": "Column Break",
+   "label": "Training Period"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "fieldname": "basis_of_evaluation_column",
+   "fieldtype": "Column Break",
+   "label": "Basis of Evaluation"
+  },
+  {
+   "default": "0",
+   "fieldname": "case_exercise",
+   "fieldtype": "Check",
+   "label": "Case Exercise"
+  },
+  {
+   "default": "0",
+   "fieldname": "project",
+   "fieldtype": "Check",
+   "label": "Project"
+  },
+  {
+   "default": "0",
+   "fieldname": "observation_in_work",
+   "fieldtype": "Check",
+   "label": "Observation in Work"
+  },
+  {
+   "default": "0",
+   "fieldname": "focus_group",
+   "fieldtype": "Check",
+   "label": "Focus Group"
+  },
+  {
+   "fieldname": "reference",
+   "fieldtype": "Small Text",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "section_break_fnzw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rating_description",
+   "fieldtype": "HTML",
+   "label": "Rating Description",
+   "options": "<table class=\"table table-bordered\" style=\"width:100%;background-color:#edd3b7;\">\n<tbody><tr>\n<td><b>Rating Guide</b></td>\n<td>A - Excellent</td>\n<td>B - Very Good</td>\n<td>C - Good</td>\n<td>D - Average</td>\n<td>E - Poor</td>\n</tr>\n</tbody></table>"
+  },
+  {
+   "fieldname": "effectiveness",
+   "fieldtype": "Table",
+   "label": "Effectiveness",
+   "options": "Training Effectiveness"
+  },
+  {
+   "fieldname": "section_break_ovtj",
+   "fieldtype": "Section Break",
+   "label": "Details of Changes as a result of training"
+  },
+  {
+   "fieldname": "learning_observed_column",
+   "fieldtype": "Column Break",
+   "label": "Learning Observed"
+  },
+  {
+   "fieldname": "learning_change",
+   "fieldtype": "Select",
+   "label": "Change Observed",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "learning_evidence",
+   "fieldtype": "Small Text",
+   "label": "Evidence"
+  },
+  {
+   "fieldname": "column_break_swyb",
+   "fieldtype": "Column Break",
+   "label": "Behaviour - Transfer of knowledge to job"
+  },
+  {
+   "fieldname": "behaviour_change",
+   "fieldtype": "Select",
+   "label": "Change Observed",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "behaviour_evidence",
+   "fieldtype": "Small Text",
+   "label": "Evidence"
+  },
+  {
+   "fieldname": "column_break_lefb",
+   "fieldtype": "Column Break",
+   "label": "Key Performance Indicators Achieved"
+  },
+  {
+   "fieldname": "kpi_change",
+   "fieldtype": "Select",
+   "label": "Change Observed",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "kpi_evidence",
+   "fieldtype": "Small Text",
+   "label": "Evidence"
+  },
+  {
+   "fieldname": "section_break_onkf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "general_comments",
+   "fieldtype": "Long Text",
+   "label": "General Comments"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Training Effectiveness Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-16 09:29:28.413120",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Training Effectiveness Form",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

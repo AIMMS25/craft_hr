@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-06 17:24:57.992478",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "parameter",
+  "ratings_section",
+  "before_training",
+  "column_break_aswp",
+  "after_training",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "parameter",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Parameter"
+  },
+  {
+   "fieldname": "ratings_section",
+   "fieldtype": "Section Break",
+   "label": "Ratings"
+  },
+  {
+   "fieldname": "before_training",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Before Training",
+   "options": "\nA\nB\nC\nD\nE"
+  },
+  {
+   "fieldname": "column_break_aswp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "after_training",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "After Training (3 or 6 months)",
+   "options": "\nA\nB\nC\nD\nE"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-16 09:21:16.695416",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Training Effectiveness",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
