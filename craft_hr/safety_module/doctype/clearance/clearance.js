@@ -7,7 +7,7 @@ frappe.ui.form.on('Clearance', {
     employee: function(frm) {
         if (frm.doc.employee) {
             frappe.call({
-                method: "craft_hr.safety_module.doctype.clearance.clearance.get_site_pass_details",
+                method: "craft_hr.safety_management.doctype.clearance.clearance.get_site_pass_details",
                 args: {
                     employee: frm.doc.employee
                 },

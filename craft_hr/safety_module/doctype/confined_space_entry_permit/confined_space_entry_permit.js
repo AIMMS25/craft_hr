@@ -7,7 +7,7 @@ frappe.ui.form.on('Confined Space Entry Permit', {
     atmosphere_reading_template: function(frm) {
         if (frm.doc.atmosphere_reading_template) {
             frappe.call({
-                method: "craft_hr.safety_module.doctype.confined_space_entry_permit.confined_space_entry_permit.get_questions",
+                method: "craft_hr.safety_management.doctype.confined_space_entry_permit.confined_space_entry_permit.get_questions",
                 args: {
                     "template_name": frm.doc.atmosphere_reading_template
                 },
