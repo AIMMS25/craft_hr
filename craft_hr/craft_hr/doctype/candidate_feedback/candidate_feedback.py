@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class JobDescription(Document):
+class CandidateFeedback(Document):
 	pass
