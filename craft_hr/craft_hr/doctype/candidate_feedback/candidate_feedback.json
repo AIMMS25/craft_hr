@@ -1,0 +1,114 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-16 11:43:06.182665",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "job_applicant",
+  "applicant_name",
+  "column_break_ulez",
+  "details_section",
+  "company",
+  "name_mentioned",
+  "designation_mentioned",
+  "column_break_tzst",
+  "name_verified",
+  "designation_verified",
+  "period_of_work",
+  "feedback",
+  "rating"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_applicant",
+   "fieldtype": "Link",
+   "label": "Job Applicant",
+   "options": "Job Applicant"
+  },
+  {
+   "fetch_from": "job_applicant.applicant_name",
+   "fieldname": "applicant_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ulez",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "fieldname": "name_mentioned",
+   "fieldtype": "Data",
+   "label": "Name Mentioned"
+  },
+  {
+   "fieldname": "designation_mentioned",
+   "fieldtype": "Data",
+   "label": "Designation Mentioned"
+  },
+  {
+   "fieldname": "column_break_tzst",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "name_verified",
+   "fieldtype": "Data",
+   "label": "Name Verified"
+  },
+  {
+   "fieldname": "designation_verified",
+   "fieldtype": "Data",
+   "label": "Designation Verified"
+  },
+  {
+   "fieldname": "period_of_work",
+   "fieldtype": "Data",
+   "label": "Period of Work"
+  },
+  {
+   "fieldname": "feedback",
+   "fieldtype": "Small Text",
+   "label": "Feedback"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-16 11:43:06.182665",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Candidate Feedback",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

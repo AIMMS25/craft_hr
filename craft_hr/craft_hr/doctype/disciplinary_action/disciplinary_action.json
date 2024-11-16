@@ -1,0 +1,243 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:DA-{employee}-{#####}",
+ "creation": "2024-11-16 11:49:53.036247",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "department",
+  "violation_date",
+  "warning_type",
+  "column_break_dkyq",
+  "employee_name",
+  "designation",
+  "disciplinary_action_issue_date",
+  "column_break_clep",
+  "company",
+  "head_of_the_department",
+  "status",
+  "violation_code",
+  "section_break_ogma",
+  "details",
+  "description_of_violation",
+  "reason_for_violation",
+  "section_break_wxfg",
+  "disciplinary_action_taken",
+  "counselling_date",
+  "section_break_kjkd",
+  "previous_disciplinary_action_history",
+  "amended_from",
+  "section_break_eqqh",
+  "employee_signature",
+  "column_break_uoct",
+  "date"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "violation_date",
+   "fieldtype": "Date",
+   "label": "Violation Date"
+  },
+  {
+   "fieldname": "warning_type",
+   "fieldtype": "Select",
+   "label": "Warning Type",
+   "options": "First Warning\nSecond Warning\nFinal Warning",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_dkyq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "disciplinary_action_issue_date",
+   "fieldtype": "Date",
+   "label": "Disciplinary Action Issue Date"
+  },
+  {
+   "fieldname": "column_break_clep",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "head_of_the_department",
+   "fieldtype": "Link",
+   "label": "Head Of The Department",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nIn Progress\nCompleted",
+   "reqd": 1
+  },
+  {
+   "fieldname": "violation_code",
+   "fieldtype": "Link",
+   "label": "Violation Code",
+   "options": "Violation Code"
+  },
+  {
+   "fieldname": "section_break_ogma",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Details"
+  },
+  {
+   "fieldname": "description_of_violation",
+   "fieldtype": "Small Text",
+   "label": "Description Of Violation"
+  },
+  {
+   "fieldname": "reason_for_violation",
+   "fieldtype": "Small Text",
+   "label": "Reason For Violation"
+  },
+  {
+   "fieldname": "section_break_wxfg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "disciplinary_action_taken",
+   "fieldtype": "Small Text",
+   "label": "Disciplinary Action Taken"
+  },
+  {
+   "fieldname": "counselling_date",
+   "fieldtype": "Date",
+   "label": "Counselling Date"
+  },
+  {
+   "fieldname": "section_break_kjkd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "previous_disciplinary_action_history",
+   "fieldtype": "Table",
+   "label": "Previous Disciplinary Action History",
+   "options": "Previous disciplinary Action"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Disciplinary Action",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_eqqh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee_signature",
+   "fieldtype": "Signature",
+   "label": "Employee Signature"
+  },
+  {
+   "fieldname": "column_break_uoct",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Sign Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-16 11:50:55.911221",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Disciplinary Action",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
