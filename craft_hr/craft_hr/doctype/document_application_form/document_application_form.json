@@ -1,0 +1,323 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:DAF-{employee}-{####}",
+ "creation": "2024-11-16 14:29:37.737664",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "designation",
+  "department",
+  "column_break_jwut",
+  "gender",
+  "nationality",
+  "visa_expiry_date",
+  "deployment_location",
+  "column_break_yypi",
+  "date_of_joining",
+  "company",
+  "type_of_contract",
+  "status",
+  "section_break_woeh",
+  "marital_status",
+  "mothers_name",
+  "column_break_ccgz",
+  "photo",
+  "visa_document_type_section",
+  "employment_visa",
+  "work_permit",
+  "column_break_mter",
+  "family_sponsor",
+  "temporary_work_permit",
+  "contact_details_section",
+  "local_no",
+  "column_break_enyy",
+  "home_country_no",
+  "salary_details_section",
+  "basic_pay",
+  "others_pay",
+  "column_break_phvs",
+  "hra_pay",
+  "transport_allowance_pay",
+  "total_pay",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jwut",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.gender",
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.custom_nationality",
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country",
+   "read_only": 1
+  },
+  {
+   "fieldname": "visa_expiry_date",
+   "fieldtype": "Date",
+   "label": "Visa Expiry Date",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.custom_deployment_location",
+   "fieldname": "deployment_location",
+   "fieldtype": "Data",
+   "label": "Deployment Location",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_yypi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_of_contract",
+   "fieldtype": "Select",
+   "label": "Type of Contract",
+   "options": "Limited\nUnlimited",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nApplied\nIssued",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_woeh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "employee.marital_status",
+   "fetch_if_empty": 1,
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "\nSingle\nMarried"
+  },
+  {
+   "fetch_from": "employee.mothers_name",
+   "fetch_if_empty": 1,
+   "fieldname": "mothers_name",
+   "fieldtype": "Data",
+   "label": "Mother's Name"
+  },
+  {
+   "fieldname": "column_break_ccgz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "visa_document_type_section",
+   "fieldtype": "Section Break",
+   "label": "Visa /Document Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "employment_visa",
+   "fieldtype": "Check",
+   "label": "Employment Visa"
+  },
+  {
+   "default": "0",
+   "fieldname": "work_permit",
+   "fieldtype": "Check",
+   "label": "Work Permit"
+  },
+  {
+   "fieldname": "column_break_mter",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "family_sponsor",
+   "fieldtype": "Check",
+   "label": "Family Sponsor"
+  },
+  {
+   "default": "0",
+   "fieldname": "temporary_work_permit",
+   "fieldtype": "Check",
+   "label": "Temporary Work Permit"
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "local_no",
+   "fieldtype": "Phone",
+   "label": "Local No"
+  },
+  {
+   "fieldname": "column_break_enyy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "home_country_no",
+   "fieldtype": "Phone",
+   "label": "Home Country No"
+  },
+  {
+   "fieldname": "salary_details_section",
+   "fieldtype": "Section Break",
+   "label": "Salary Details"
+  },
+  {
+   "fetch_from": "employee.custom_basic_salary",
+   "fetch_if_empty": 1,
+   "fieldname": "basic_pay",
+   "fieldtype": "Currency",
+   "label": "Basic"
+  },
+  {
+   "fetch_from": "employee.custom_other_allowance",
+   "fetch_if_empty": 1,
+   "fieldname": "others_pay",
+   "fieldtype": "Currency",
+   "label": "Others"
+  },
+  {
+   "fieldname": "column_break_phvs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.custom_housing_allowance",
+   "fetch_if_empty": 1,
+   "fieldname": "hra_pay",
+   "fieldtype": "Currency",
+   "label": "HRA"
+  },
+  {
+   "fetch_from": "employee.custom_transport_allowance",
+   "fetch_if_empty": 1,
+   "fieldname": "transport_allowance_pay",
+   "fieldtype": "Currency",
+   "label": "Transport Allowance"
+  },
+  {
+   "fetch_from": "employee.custom_transport_allowance",
+   "fieldname": "total_pay",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Document Application Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "image_field": "photo",
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-16 14:30:18.570050",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Document Application Form",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Pending"
+  },
+  {
+   "color": "Cyan",
+   "title": "Applied"
+  },
+  {
+   "color": "Green",
+   "title": "Issued"
+  }
+ ]
+}
