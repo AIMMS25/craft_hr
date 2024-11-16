@@ -4,7 +4,7 @@ frappe.ui.form.on('Expenses', {
             if (frm.doc.expense_type === 'Fuel') {
                 frappe.confirm(__('Create and submit Vehicle Logs for all Fuel entries?'), function() {
                     frappe.call({
-                        method: 'craft_hr.fleetmanagement_module.doctype.expenses.expenses.create_fuel_vehicle_logs',
+                        method: 'craft_hr.fleet_management_module.doctype.expenses.expenses.create_fuel_vehicle_logs',
                         args: { fuel_expense: frm.doc.fuel_expense },
                         callback: function(response) {
                             if (response.message) {
@@ -22,7 +22,7 @@ frappe.ui.form.on('Expenses', {
             } else if (frm.doc.expense_type === 'Service') {
                 frappe.confirm(__('Create and submit Vehicle Logs for all Service entries?'), function() {
                     frappe.call({
-                        method: 'craft_hr.fleetmanagement_module.doctype.expenses.expenses.create_service_vehicle_logs',
+                        method: 'craft_hr.fleet_management_module.doctype.expenses.expenses.create_service_vehicle_logs',
                         args: { service_expense: frm.doc.service_expense },
                         callback: function(response) {
                             if (response.message) {
