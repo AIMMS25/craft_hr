@@ -1,0 +1,171 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:HR-TA-{YYYY}-{####}",
+ "creation": "2024-06-25 17:03:21.774434",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "company",
+  "column_break_asxbt",
+  "posting_date",
+  "last_ticket_date",
+  "eligibility",
+  "eligibility_date",
+  "allocation_section",
+  "opening",
+  "used_days",
+  "earned_days",
+  "column_break_9bjjs",
+  "ticket_value_earned",
+  "rounded_ticket_value_earned",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "last_ticket_date",
+   "fieldtype": "Date",
+   "label": "Last Ticket Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_asxbt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "allocation_section",
+   "fieldtype": "Section Break",
+   "label": "Allocation"
+  },
+  {
+   "depends_on": "eval:doc.docstatus==0",
+   "fieldname": "opening",
+   "fieldtype": "Float",
+   "label": "Opening Days"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "earned_days",
+   "fieldtype": "Int",
+   "label": "Ticket Value Earned Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Ticket Allocation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "ticket_value_earned",
+   "fieldtype": "Float",
+   "label": "Ticket Value Earned",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_9bjjs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "eligibility",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Eligibility",
+   "options": "Not Eligible\nEligible",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rounded_ticket_value_earned",
+   "fieldtype": "Float",
+   "label": "Rounded Ticket Value Earned",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "no_copy": 1,
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "used_days",
+   "fieldtype": "Int",
+   "label": "Used Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "eligibility_date",
+   "fieldtype": "Date",
+   "label": "Eligibility Date",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Ticket Application",
+   "link_fieldname": "ticket_allocation"
+  }
+ ],
+ "modified": "2024-08-14 08:56:20.410387",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Ticket Allocation",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

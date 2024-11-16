@@ -11,7 +11,11 @@
   "leave_allocation_based_on_leave_distribution_template",
   "reset_allocation_with_carry_forward",
   "payroll_features_section",
-  "assign_salary_components_during_assignment"
+  "assign_salary_components_during_assignment",
+  "ticket_allocation_section",
+  "threshold_amount",
+  "threshold_no_of_days",
+  "per_day_amount"
  ],
  "fields": [
   {
@@ -41,12 +45,33 @@
    "fieldname": "reset_allocation_with_carry_forward",
    "fieldtype": "Check",
    "label": "Reset Allocation with Carry Forward"
+  },
+  {
+   "fieldname": "ticket_allocation_section",
+   "fieldtype": "Section Break",
+   "label": "Ticket Allocation"
+  },
+  {
+   "fieldname": "threshold_amount",
+   "fieldtype": "Float",
+   "label": "Threshold Amount"
+  },
+  {
+   "fieldname": "threshold_no_of_days",
+   "fieldtype": "Float",
+   "label": "Threshold No of Days"
+  },
+  {
+   "fieldname": "per_day_amount",
+   "fieldtype": "Float",
+   "label": "Per Day Amount",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-06-14 15:29:41.825863",
+ "modified": "2024-11-16 10:24:30.725520",
  "modified_by": "Administrator",
  "module": "Craft HR",
  "name": "Craft HR Settings",
