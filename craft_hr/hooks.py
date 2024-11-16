@@ -12,6 +12,8 @@ fixtures = [
     {'dt':'Property Setter', 'filters':[['module', 'in', {"Craft HR", "OT Mgmt"}]]},
     {'dt':'Report', 'filters':[['name', 'in', {"Overtime Summary"}]]},
     {'dt':'Custom Field', 'filters':[['module', 'in', {"Craft HR", "Accommodation"}]]},
+    {'dt':'Custom Field', 'filters':[['module', 'in', {"Craft HR", "Fleet Management Module"}]]},
+
     ]
 # Includes in <head>
 # ------------------

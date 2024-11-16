@@ -1,0 +1,170 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-05 11:15:32.106250",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_name",
+  "job_number",
+  "column_break_h6gmd",
+  "date",
+  "company",
+  "ace_safety_induction_date",
+  "inducted_by",
+  "full_name",
+  "section_break_lqyw6",
+  "site_location",
+  "site_engineer",
+  "engineer_name",
+  "hse_comments",
+  "column_break_gedux",
+  "site_safety_induction_date",
+  "site_representative",
+  "representative_name",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Project Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "job_number",
+   "fieldtype": "Data",
+   "label": "Job Number"
+  },
+  {
+   "fieldname": "column_break_h6gmd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ace_safety_induction_date",
+   "fieldtype": "Date",
+   "label": "Ace Safety Induction Date"
+  },
+  {
+   "fieldname": "inducted_by",
+   "fieldtype": "Link",
+   "label": "Inducted By",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "inducted_by.employee_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Inducted By ( Full Name)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_lqyw6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "site_location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Site Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "site_engineer",
+   "fieldtype": "Link",
+   "label": "Site Engineer",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "site_engineer.employee_name",
+   "fieldname": "engineer_name",
+   "fieldtype": "Data",
+   "label": "Engineer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hse_comments",
+   "fieldtype": "Small Text",
+   "label": "HSE Comments"
+  },
+  {
+   "fieldname": "column_break_gedux",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "site_safety_induction_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Site Safety Induction date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "site_representative",
+   "fieldtype": "Link",
+   "label": "Site Ace Representative",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "site_representative.employee_name",
+   "fieldname": "representative_name",
+   "fieldtype": "Data",
+   "label": "Representative Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Site Work Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-15 17:11:43.802822",
+ "modified_by": "Administrator",
+ "module": "Safety Module",
+ "name": "Site Work Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

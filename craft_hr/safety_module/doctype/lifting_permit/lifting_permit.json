@@ -1,0 +1,329 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-30 14:59:02.617138",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "permit_requester",
+  "name1",
+  "job_number",
+  "crane_capacity",
+  "project_name",
+  "column_break_jm7kk",
+  "date",
+  "arealocation",
+  "section_break_y8vnj",
+  "description",
+  "operating_radius",
+  "column_break_iok7k",
+  "capacity_of_crane",
+  "total_lifting_load",
+  "percentage_crane_utilization",
+  "specification_of_lifting_gears_section",
+  "specification",
+  "lifting_crew_members_section",
+  "lifting_in_charge",
+  "in_charge_name",
+  "in_charge_date",
+  "signature1",
+  "column_break_zuibg",
+  "rigging_supervisor",
+  "supervisor_name",
+  "supervisor_date",
+  "signature2",
+  "section_break_ykozc",
+  "inspection_done_by",
+  "inspector_name",
+  "column_break_jfjgt",
+  "designation",
+  "issuing_authority_section",
+  "issuing_employee",
+  "issuing_employee_name",
+  "column_break_vxp4f",
+  "issuing_date",
+  "receiving_authority_section",
+  "receiving_employee",
+  "receiving_employee_name",
+  "column_break_a5p17",
+  "receiving_date",
+  "section_break_uk1wb",
+  "hse_department_comments",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "permit_requester",
+   "fieldtype": "Link",
+   "label": "Permit Requester",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "permit_requester.employee_name",
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "job_number",
+   "fieldtype": "Data",
+   "label": "Job Number"
+  },
+  {
+   "fieldname": "crane_capacity",
+   "fieldtype": "Data",
+   "label": "Crane Capacity"
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name"
+  },
+  {
+   "fieldname": "column_break_jm7kk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "arealocation",
+   "fieldtype": "Data",
+   "label": "Area/Location"
+  },
+  {
+   "fieldname": "section_break_y8vnj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description of Load"
+  },
+  {
+   "fieldname": "operating_radius",
+   "fieldtype": "Data",
+   "label": "Maximum Operating Radius"
+  },
+  {
+   "fieldname": "column_break_iok7k",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "capacity_of_crane",
+   "fieldtype": "Float",
+   "label": "Capacity of crane at operating Radius"
+  },
+  {
+   "fieldname": "total_lifting_load",
+   "fieldtype": "Float",
+   "label": "Total Lifting Load"
+  },
+  {
+   "fieldname": "percentage_crane_utilization",
+   "fieldtype": "Float",
+   "label": "Percentage of Crane Utilization",
+   "read_only": 1
+  },
+  {
+   "fieldname": "specification_of_lifting_gears_section",
+   "fieldtype": "Section Break",
+   "label": "Specification of Lifting Gears"
+  },
+  {
+   "fieldname": "specification",
+   "fieldtype": "Table",
+   "label": "Specification",
+   "options": "Specification of Lifting Gears"
+  },
+  {
+   "fieldname": "lifting_crew_members_section",
+   "fieldtype": "Section Break",
+   "label": "Lifting crew members "
+  },
+  {
+   "fieldname": "lifting_in_charge",
+   "fieldtype": "Link",
+   "label": "Lifting In Charge",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "lifting_in_charge.employee_name",
+   "fieldname": "in_charge_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "in_charge_date",
+   "fieldtype": "Datetime",
+   "label": "Date"
+  },
+  {
+   "fieldname": "signature1",
+   "fieldtype": "Attach Image",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "column_break_zuibg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rigging_supervisor",
+   "fieldtype": "Link",
+   "label": "Rigging Supervisor",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "rigging_supervisor.employee_name",
+   "fieldname": "supervisor_name",
+   "fieldtype": "Data",
+   "label": "Supervisor Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supervisor_date",
+   "fieldtype": "Datetime",
+   "label": "Date"
+  },
+  {
+   "fieldname": "signature2",
+   "fieldtype": "Attach Image",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "section_break_ykozc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "inspection_done_by",
+   "fieldtype": "Link",
+   "label": "Inspection done by",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "inspection_done_by.employee_name",
+   "fieldname": "inspector_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jfjgt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "inspection_done_by.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issuing_authority_section",
+   "fieldtype": "Section Break",
+   "label": "Issuing Authority"
+  },
+  {
+   "fieldname": "issuing_employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "issuing_employee.employee_name",
+   "fieldname": "issuing_employee_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vxp4f",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "issuing_date",
+   "fieldtype": "Datetime",
+   "label": "Date"
+  },
+  {
+   "fieldname": "receiving_authority_section",
+   "fieldtype": "Section Break",
+   "label": "Receiving Authority"
+  },
+  {
+   "fieldname": "receiving_employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "receiving_employee.employee_name",
+   "fieldname": "receiving_employee_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_a5p17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "receiving_date",
+   "fieldtype": "Datetime",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_uk1wb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "hse_department_comments",
+   "fieldtype": "Small Text",
+   "label": "HSE department Comments"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Lifting Permit",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-15 17:11:37.712696",
+ "modified_by": "Administrator",
+ "module": "Safety Module",
+ "name": "Lifting Permit",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

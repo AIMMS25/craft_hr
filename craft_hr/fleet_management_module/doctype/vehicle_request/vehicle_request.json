@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-15 13:37:36.870820",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "site_or_non_site",
+  "site_name_location",
+  "description",
+  "duration",
+  "column_break_kpjue",
+  "request_date",
+  "emirates",
+  "itemdocument",
+  "passenger_included",
+  "can_use_vehicle_for_other_work_during_the_duration",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "site_or_non_site",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Site/Non Site",
+   "options": "\nSite\nNon Site"
+  },
+  {
+   "fieldname": "site_name_location",
+   "fieldtype": "Data",
+   "label": "Site name or Location"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description of Work"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "column_break_kpjue",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Request Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "emirates",
+   "fieldtype": "Select",
+   "label": "Emirates",
+   "options": "\nAbu Dhabi\nDubai\nSharjah\nAjman\nUmm Al-Quwain\nRas Al Khaimah\nFujairah"
+  },
+  {
+   "fieldname": "itemdocument",
+   "fieldtype": "Data",
+   "label": "Item/Document"
+  },
+  {
+   "fieldname": "passenger_included",
+   "fieldtype": "Select",
+   "label": "Passenger included",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "can_use_vehicle_for_other_work_during_the_duration",
+   "fieldtype": "Select",
+   "label": "Can Use vehicle for other work during the duration",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicle Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Vehicle Allocation",
+   "link_fieldname": "vehicle_request"
+  }
+ ],
+ "modified": "2024-11-16 09:26:03.285444",
+ "modified_by": "Administrator",
+ "module": "Fleet Management Module",
+ "name": "Vehicle Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
