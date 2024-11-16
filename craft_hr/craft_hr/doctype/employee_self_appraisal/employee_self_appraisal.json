@@ -1,0 +1,194 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{employee}-{employee_name}",
+ "creation": "2024-11-16 10:56:44.587881",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "companydivision",
+  "column_break_gdzj",
+  "date",
+  "department",
+  "designation",
+  "employee_promotion",
+  "review_period_section",
+  "from",
+  "to",
+  "factors_section",
+  "q1",
+  "q2",
+  "q3",
+  "q4",
+  "q5",
+  "commentssuggestions",
+  "column_break_3oil",
+  "q6",
+  "q7",
+  "q8",
+  "q9",
+  "q10"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "companydivision",
+   "fieldtype": "Link",
+   "label": "Company/Division",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gdzj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_promotion",
+   "fieldtype": "Link",
+   "label": "Employee Promotion",
+   "options": "Employee Promotion",
+   "read_only": 1
+  },
+  {
+   "fieldname": "review_period_section",
+   "fieldtype": "Section Break",
+   "label": "Review Period"
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Date",
+   "label": "From"
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Date",
+   "label": "To"
+  },
+  {
+   "fieldname": "factors_section",
+   "fieldtype": "Section Break",
+   "label": "Factors"
+  },
+  {
+   "fieldname": "q1",
+   "fieldtype": "Text",
+   "label": "List the top three to five priorities of your job as you understand them:"
+  },
+  {
+   "fieldname": "q2",
+   "fieldtype": "Text",
+   "label": "List the KPIs / Objectives achieved during this review period:"
+  },
+  {
+   "fieldname": "q3",
+   "fieldtype": "Text",
+   "label": "Identify the factors that impacted your performance:"
+  },
+  {
+   "fieldname": "q4",
+   "fieldtype": "Text",
+   "label": "What could your Supervisor/Manager and Colleagues do to help you in your job?"
+  },
+  {
+   "fieldname": "q5",
+   "fieldtype": "Text",
+   "label": "What are the required resources to perform your task more efficiently?"
+  },
+  {
+   "fieldname": "commentssuggestions",
+   "fieldtype": "Text",
+   "label": "Comments/Suggestions"
+  },
+  {
+   "fieldname": "column_break_3oil",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q6",
+   "fieldtype": "Text",
+   "label": "In what areas you would like to gain more experience or training?"
+  },
+  {
+   "fieldname": "q7",
+   "fieldtype": "Text",
+   "label": "In what areas you have participated to gain more professional development?"
+  },
+  {
+   "fieldname": "q8",
+   "fieldtype": "Text",
+   "label": "I would like to work in the following areas:"
+  },
+  {
+   "fieldname": "q9",
+   "fieldtype": "Text",
+   "label": "KPIs for the year 20"
+  },
+  {
+   "fieldname": "q10",
+   "fieldtype": "Text",
+   "label": "KPIs Achieved for the year 20"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-16 10:57:25.806459",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Employee Self Appraisal",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

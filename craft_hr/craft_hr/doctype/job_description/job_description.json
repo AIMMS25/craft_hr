@@ -1,0 +1,192 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:BYDI-HR-OPS-TRG-{##}",
+ "creation": "2024-11-16 11:08:36.354188",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "designation",
+  "department",
+  "column_break_vbxw",
+  "company",
+  "reports_to",
+  "job_code",
+  "section_break_ihix",
+  "substitute_to",
+  "substituted_by",
+  "column_break_lmuc",
+  "appraisal_template",
+  "section_break_gdrf",
+  "roles_and_responsibilities",
+  "requirements_section",
+  "education",
+  "column_break_ukjb",
+  "experience",
+  "section_break_qibg",
+  "key_skills",
+  "competencies",
+  "section_break_uafr",
+  "details",
+  "section_break_jkko",
+  "kpi"
+ ],
+ "fields": [
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Designation",
+   "options": "Designation",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "column_break_vbxw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee_id.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fetch_from": "employee.reports_to",
+   "fieldname": "reports_to",
+   "fieldtype": "Link",
+   "label": "Reports To",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "job_code",
+   "fieldtype": "Data",
+   "label": "Job Code"
+  },
+  {
+   "fieldname": "section_break_ihix",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "substitute_to",
+   "fieldtype": "Link",
+   "label": "Substitute to",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "substituted_by",
+   "fieldtype": "Link",
+   "label": "Substituted by",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "column_break_lmuc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "appraisal_template",
+   "fieldtype": "Link",
+   "label": "Appraisal Template",
+   "options": "Appraisal Template"
+  },
+  {
+   "fieldname": "section_break_gdrf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "roles_and_responsibilities",
+   "fieldtype": "Text Editor",
+   "label": "Roles And Responsibilities"
+  },
+  {
+   "fieldname": "requirements_section",
+   "fieldtype": "Section Break",
+   "label": "Requirements"
+  },
+  {
+   "fieldname": "education",
+   "fieldtype": "Select",
+   "label": "Education",
+   "options": "\nBelow 10th Grade\n10th Grade\n12th Grade\nBachelor Degree\nMaster Degree"
+  },
+  {
+   "fieldname": "column_break_ukjb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "experience",
+   "fieldtype": "Select",
+   "label": "Experience",
+   "options": "\n1 years\n2 years\n3+ years"
+  },
+  {
+   "fieldname": "section_break_qibg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "key_skills",
+   "fieldtype": "Text",
+   "label": "Key Skills"
+  },
+  {
+   "fieldname": "competencies",
+   "fieldtype": "Small Text",
+   "label": "Competencies"
+  },
+  {
+   "fieldname": "section_break_uafr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Table",
+   "label": "Details",
+   "options": "Accountability"
+  },
+  {
+   "fieldname": "section_break_jkko",
+   "fieldtype": "Section Break",
+   "label": "KPI Details"
+  },
+  {
+   "fieldname": "kpi",
+   "fieldtype": "Table",
+   "label": "KPIs",
+   "options": "Job Description KPI Table"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-16 11:08:36.354188",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Job Description",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
