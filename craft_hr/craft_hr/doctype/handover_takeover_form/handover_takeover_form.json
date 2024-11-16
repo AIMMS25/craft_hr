@@ -1,0 +1,190 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:HF-{employee}-{#}",
+ "creation": "2024-11-16 12:45:45.952335",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "joining_date",
+  "reason_for_leaving",
+  "id_no",
+  "take_over_employee_name",
+  "column_break_dvhv",
+  "date",
+  "company",
+  "designation",
+  "department",
+  "last_working_date",
+  "section_break_hdgf",
+  "current_responsibilities",
+  "pending_and_follow_up_responsibilities",
+  "section_break_jywn",
+  "table"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "joining_date",
+   "fieldtype": "Date",
+   "label": "Joining Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reason_for_leaving",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reason for leaving",
+   "reqd": 1
+  },
+  {
+   "fieldname": "id_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Take over Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "id_no.employee_name",
+   "fieldname": "take_over_employee_name",
+   "fieldtype": "Data",
+   "label": "Take over Employee name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_dvhv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.relieving_date",
+   "fieldname": "last_working_date",
+   "fieldtype": "Date",
+   "label": "Last Working Date"
+  },
+  {
+   "fieldname": "section_break_hdgf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "current_responsibilities",
+   "fieldtype": "Text Editor",
+   "label": "Current Responsibilities"
+  },
+  {
+   "fieldname": "pending_and_follow_up_responsibilities",
+   "fieldtype": "Text Editor",
+   "label": "Pending And Follow up Responsibilities"
+  },
+  {
+   "fieldname": "section_break_jywn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table",
+   "fieldtype": "Table",
+   "label": "Table",
+   "options": "Handover Takeover Form Child"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-16 12:47:24.204212",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "HandOver TakeOver Form",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
