@@ -1,0 +1,242 @@
+{
+ "actions": [],
+ "autoname": "PRF-.YY.-.#####",
+ "creation": "2024-11-16 10:14:14.076757",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "designation",
+  "department",
+  "column_break_4sirq",
+  "date",
+  "company",
+  "status",
+  "section_break_qfbk",
+  "required_date",
+  "return_date",
+  "column_break_uagt",
+  "specify",
+  "section_break_ourz",
+  "column_break_glmz",
+  "certificate_address_to",
+  "purpose",
+  "section_break_ryff",
+  "employee_signature",
+  "column_break_pkgq",
+  "sign_date",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4sirq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nApproved",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_qfbk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "required_date",
+   "fieldtype": "Date",
+   "label": "Required date"
+  },
+  {
+   "depends_on": "eval:doc.document_type == \"Passport\"",
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "label": "Return Date"
+  },
+  {
+   "fieldname": "column_break_uagt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.certificate_type == \"Other\"",
+   "fieldname": "specify",
+   "fieldtype": "Data",
+   "label": "Specify"
+  },
+  {
+   "fieldname": "section_break_ourz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.document_type != \"Passport\"",
+   "fieldname": "column_break_glmz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.document_type != \"Passport\"",
+   "fieldname": "certificate_address_to",
+   "fieldtype": "Small Text",
+   "label": "Certificate Address To"
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Small Text",
+   "label": "Purpose"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Passport Request Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_ryff",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee_signature",
+   "fieldtype": "Signature",
+   "label": "Employee Signature"
+  },
+  {
+   "fieldname": "column_break_pkgq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sign_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-16 10:16:11.529064",
+ "modified_by": "Administrator",
+ "module": "Bin Yaber Hr",
+ "name": "Passport Request Form",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
