@@ -1,0 +1,287 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:EMP-CON-{employee}-{####}",
+ "creation": "2024-11-16 14:21:38.444725",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "designation",
+  "mobile_no",
+  "column_break_jwut",
+  "company",
+  "nationality",
+  "department",
+  "column_break_yypi",
+  "date_of_joining",
+  "permit_expiry_date",
+  "type_of_contract",
+  "status",
+  "visa_document_type_section",
+  "employment_visa",
+  "work_permit",
+  "column_break_mter",
+  "family_sponsor",
+  "temporary_work_permit",
+  "salary_details_section",
+  "basic_pay",
+  "others_pay",
+  "column_break_phvs",
+  "hra_pay",
+  "transport_allowance_pay",
+  "total_pay",
+  "amended_from",
+  "declaration_section",
+  "willing_for_contract_renewal",
+  "comments"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.custom_mobile",
+   "fetch_if_empty": 1,
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jwut",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.custom_nationality",
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_yypi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining",
+   "read_only": 1
+  },
+  {
+   "fieldname": "permit_expiry_date",
+   "fieldtype": "Date",
+   "label": "Permit/Contract Expiry Date"
+  },
+  {
+   "fieldname": "type_of_contract",
+   "fieldtype": "Select",
+   "label": "Type of Contract",
+   "options": "Limited\nUnlimited",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nApplied\nIssued",
+   "reqd": 1
+  },
+  {
+   "fieldname": "visa_document_type_section",
+   "fieldtype": "Section Break",
+   "label": "Visa /Document Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "employment_visa",
+   "fieldtype": "Check",
+   "label": "Employment Visa"
+  },
+  {
+   "default": "0",
+   "fieldname": "work_permit",
+   "fieldtype": "Check",
+   "label": "Work Permit"
+  },
+  {
+   "fieldname": "column_break_mter",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "family_sponsor",
+   "fieldtype": "Check",
+   "label": "Family Sponsor"
+  },
+  {
+   "default": "0",
+   "fieldname": "temporary_work_permit",
+   "fieldtype": "Check",
+   "label": "Temporary Work Permit"
+  },
+  {
+   "fieldname": "salary_details_section",
+   "fieldtype": "Section Break",
+   "label": "Salary Details"
+  },
+  {
+   "fetch_from": "employee.custom_basic_salary",
+   "fetch_if_empty": 1,
+   "fieldname": "basic_pay",
+   "fieldtype": "Currency",
+   "label": "Basic"
+  },
+  {
+   "fetch_from": "employee.custom_other_allowance",
+   "fetch_if_empty": 1,
+   "fieldname": "others_pay",
+   "fieldtype": "Currency",
+   "label": "Others"
+  },
+  {
+   "fieldname": "column_break_phvs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.custom_housing_allowance",
+   "fetch_if_empty": 1,
+   "fieldname": "hra_pay",
+   "fieldtype": "Currency",
+   "label": "HRA"
+  },
+  {
+   "fetch_from": "employee.custom_transport_allowance",
+   "fetch_if_empty": 1,
+   "fieldname": "transport_allowance_pay",
+   "fieldtype": "Currency",
+   "label": "Transport Allowance"
+  },
+  {
+   "fieldname": "total_pay",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Contract",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "declaration_section",
+   "fieldtype": "Section Break",
+   "label": "Declaration"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Contract",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "willing_for_contract_renewal",
+   "fieldtype": "Select",
+   "label": "Willing For Contract Renewal",
+   "options": "Yes\nNo"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-16 14:23:56.386286",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Employment Contract Renewal",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Pending"
+  },
+  {
+   "color": "Cyan",
+   "title": "Applied"
+  },
+  {
+   "color": "Green",
+   "title": "Issued"
+  }
+ ]
+}
