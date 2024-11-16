@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:TA-{YYYY}-{####}",
+ "creation": "2024-06-27 11:18:30.566192",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "column_break_8vlbp",
+  "posting_date",
+  "company",
+  "section_break_rrv6l",
+  "allocated_ticket_section",
+  "available_days",
+  "rounded_ticket_value_earned",
+  "column_break_yqqa6",
+  "eligibility",
+  "redeemed_ticket_price",
+  "ticket_allocation",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_8vlbp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_rrv6l",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.employee",
+   "fieldname": "available_days",
+   "fieldtype": "Float",
+   "label": "Available Days",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.employee",
+   "fieldname": "allocated_ticket_section",
+   "fieldtype": "Section Break",
+   "label": "Allocated Ticket"
+  },
+  {
+   "depends_on": "eval:doc.employee",
+   "fieldname": "eligibility",
+   "fieldtype": "Data",
+   "label": "Eligibility",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_yqqa6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Ticket Application",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "redeemed_ticket_price",
+   "fieldtype": "Float",
+   "label": "Redeemed Ticket Price"
+  },
+  {
+   "fieldname": "ticket_allocation",
+   "fieldtype": "Link",
+   "label": "Ticket Allocation",
+   "options": "Ticket Allocation",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.employee",
+   "fieldname": "rounded_ticket_value_earned",
+   "fieldtype": "Float",
+   "label": "Ticket Value Earned",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-16 14:32:34.803367",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Ticket Application",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
