@@ -3,5 +3,5 @@ OT Mgmt
 Documents
 Travel
 Accommodation
-Safety Module
+Safety Management
 Fleet Management

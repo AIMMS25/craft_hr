@@ -1,0 +1,180 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-06 13:59:19.389859",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "designation",
+  "date_of_joining",
+  "company",
+  "source_warehouse",
+  "column_break_l07sl",
+  "authorization_status",
+  "category",
+  "ppe_request_date",
+  "store_location",
+  "ppe_request",
+  "photo",
+  "section_break_zkkep",
+  "items",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Data",
+   "label": "Date of Joining",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Source Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_l07sl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "authorization_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Authorization Status",
+   "options": "Pending\nAuthorized\nUnauthorized",
+   "read_only": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Category",
+   "options": "\nOffice Staff\nWorkshop Staff\nSite Staff",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ppe_request_date",
+   "fieldtype": "Date",
+   "label": "PPE Request Date"
+  },
+  {
+   "fieldname": "store_location",
+   "fieldtype": "Link",
+   "label": "Store Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "ppe_request",
+   "fieldtype": "Link",
+   "label": "PPE Request",
+   "options": "PPE Request",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.image",
+   "fieldname": "photo",
+   "fieldtype": "Image",
+   "label": "Photo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_zkkep",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "PPE Auth Items"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "PPE Authorization",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Stock Entry",
+   "link_fieldname": "custom_ppe_authorization"
+  },
+  {
+   "link_doctype": "Expense Claim",
+   "link_fieldname": "custom_ppe_authorization"
+  }
+ ],
+ "modified": "2024-11-15 17:11:42.559004",
+ "modified_by": "Administrator",
+ "module": "Safety Management",
+ "name": "PPE Authorization",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
