@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:transaction_id",
+ "creation": "2024-10-15 14:52:37.827161",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "account_no",
+  "trip_details_section",
+  "transaction_id",
+  "tag_number",
+  "vehicle",
+  "toll_gate",
+  "direction",
+  "amount",
+  "column_break_2k03c",
+  "posting_date",
+  "company",
+  "trip_date",
+  "trip_time",
+  "odometer",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Account No",
+   "options": "Salik Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "trip_details_section",
+   "fieldtype": "Section Break",
+   "label": "Trip Details"
+  },
+  {
+   "fieldname": "transaction_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Transaction ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "tag_number",
+   "fieldtype": "Data",
+   "label": "Tag Number"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Vehicle",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "toll_gate",
+   "fieldtype": "Link",
+   "label": "Toll Gate",
+   "options": "Toll Gate"
+  },
+  {
+   "fieldname": "direction",
+   "fieldtype": "Data",
+   "label": "Direction"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "label": "Amount",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "column_break_2k03c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "trip_date",
+   "fieldtype": "Date",
+   "label": "Trip Date"
+  },
+  {
+   "fieldname": "trip_time",
+   "fieldtype": "Time",
+   "label": "Trip Time"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "odometer",
+   "fieldtype": "Int",
+   "label": "Current Odometer Value"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Salik Expense",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-16 09:26:11.334659",
+ "modified_by": "Administrator",
+ "module": "Fleet Management",
+ "name": "Salik Expense",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -12,7 +12,7 @@ fixtures = [
     {'dt':'Property Setter', 'filters':[['module', 'in', {"Craft HR", "OT Mgmt"}]]},
     {'dt':'Report', 'filters':[['name', 'in', {"Overtime Summary"}]]},
     {'dt':'Custom Field', 'filters':[['module', 'in', {"Craft HR", "Accommodation"}]]},
-    {'dt':'Custom Field', 'filters':[['module', 'in', {"Craft HR", "Fleet Management Module"}]]},
+    {'dt':'Custom Field', 'filters':[['module', 'in', {"Craft HR", "Fleet Management"}]]},
 
     ]
 # Includes in <head>

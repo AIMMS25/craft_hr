@@ -1,0 +1,221 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SR-{vehicle}-{####}",
+ "creation": "2024-10-11 10:53:22.845294",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle",
+  "make",
+  "model",
+  "column_break_2mhmm",
+  "company",
+  "request_date",
+  "section_break_cdsfr",
+  "service_type",
+  "service_km",
+  "lpo_no",
+  "service_category",
+  "charges_applicable",
+  "column_break_symis",
+  "service_details",
+  "expense_to_company",
+  "services_address",
+  "spare_parts_applicable",
+  "attachment",
+  "section_break_awavd",
+  "next_service_after_how_many_kms",
+  "next_service_km",
+  "serviced_by",
+  "column_break_4naag",
+  "next_service_after_how_many_months",
+  "next_service_date",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Vehicle",
+   "options": "Vehicle",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "vehicle.make",
+   "fieldname": "make",
+   "fieldtype": "Data",
+   "label": "Make",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.model",
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2mhmm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "label": "Request Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_cdsfr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "service_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Service Type",
+   "options": "\nShow Room Warranty Service\nShow Room Chargeable Service\nExternal Garage Services\nInhouse Garage Service only\nInhouse Garage Service + Stock Items\nInhouse Garage Service + External Purchase\nRecovery Services\nExternal Washing & Cleaning\nAccessories"
+  },
+  {
+   "fieldname": "service_km",
+   "fieldtype": "Float",
+   "label": "Service KM"
+  },
+  {
+   "fieldname": "lpo_no",
+   "fieldtype": "Data",
+   "label": "LPO No"
+  },
+  {
+   "fieldname": "service_category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Service category",
+   "options": "\nPreventive Maintenance\nBreak Down Maintenance\nAccidental Repair\nOthers"
+  },
+  {
+   "fieldname": "charges_applicable",
+   "fieldtype": "Float",
+   "label": "Charges Applicable"
+  },
+  {
+   "fieldname": "column_break_symis",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_details",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Service details",
+   "options": "Service Details"
+  },
+  {
+   "fieldname": "expense_to_company",
+   "fieldtype": "Link",
+   "label": "Expense to Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "services_address",
+   "fieldtype": "Small Text",
+   "label": "Services Address"
+  },
+  {
+   "fieldname": "spare_parts_applicable",
+   "fieldtype": "Select",
+   "label": "Spare Parts Applicable",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "section_break_awavd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "next_service_after_how_many_kms",
+   "fieldtype": "Float",
+   "label": "Next Service after how many Kms"
+  },
+  {
+   "fieldname": "next_service_km",
+   "fieldtype": "Float",
+   "label": "Next Service KM"
+  },
+  {
+   "fieldname": "serviced_by",
+   "fieldtype": "Data",
+   "label": "Serviced By"
+  },
+  {
+   "fieldname": "column_break_4naag",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "next_service_after_how_many_months",
+   "fieldtype": "Data",
+   "label": "Next Service after how many Months"
+  },
+  {
+   "fieldname": "next_service_date",
+   "fieldtype": "Date",
+   "label": "Next Service Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Service request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-16 09:26:09.889186",
+ "modified_by": "Administrator",
+ "module": "Fleet Management",
+ "name": "Service request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
