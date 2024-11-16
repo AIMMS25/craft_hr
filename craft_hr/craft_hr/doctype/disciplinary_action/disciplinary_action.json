@@ -158,7 +158,7 @@
    "fieldname": "previous_disciplinary_action_history",
    "fieldtype": "Table",
    "label": "Previous Disciplinary Action History",
-   "options": "Previous disciplinary Action"
+   "options": "Previous Disciplinary Action"
   },
   {
    "fieldname": "amended_from",

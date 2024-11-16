@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-16 12:40:01.580378",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "type_of_violation",
+  "action_taken",
+  "black_points"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "type_of_violation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Type of Violation"
+  },
+  {
+   "fieldname": "action_taken",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Action Taken"
+  },
+  {
+   "fieldname": "black_points",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Black Points"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-16 12:40:10.447278",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Previous Disciplinary Action",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
