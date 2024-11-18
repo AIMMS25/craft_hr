@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class EmployeeJoining(Document):
+class EmployeeJoiningReport(Document):
 	pass
