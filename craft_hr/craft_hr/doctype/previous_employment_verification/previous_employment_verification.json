@@ -1,0 +1,249 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PEV-{applicant_name}",
+ "creation": "2024-11-18 08:41:40.728520",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "job_applicant",
+  "applicant_name",
+  "column_break_lmkf",
+  "date",
+  "status",
+  "service_details_section",
+  "company",
+  "start_date",
+  "end_date",
+  "column_break_gatf",
+  "total_year",
+  "designation",
+  "reporting_to",
+  "attributes_section",
+  "level_of_job_knowledge_as_per_job_description",
+  "skills_technical__operationserviceit",
+  "column_break_nrmu",
+  "attitude_no_complaints_issuedpunitive_score",
+  "creativity_and_innovation",
+  "leadership_and_goal_achievements",
+  "general_section",
+  "last_salary_compensation",
+  "would_you_rehire_the_applicant",
+  "column_break_oapa",
+  "reason_for_leaving_the_company",
+  "name_of_person_completed_the_form",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_applicant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Job Applicant ",
+   "options": "Job Applicant",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "job_applicant.applicant_name",
+   "fieldname": "applicant_name",
+   "fieldtype": "Data",
+   "label": "Applicant Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_lmkf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nVerified"
+  },
+  {
+   "fieldname": "service_details_section",
+   "fieldtype": "Section Break",
+   "label": "Service Details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date of Employment"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date of Service"
+  },
+  {
+   "fieldname": "column_break_gatf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_year",
+   "fieldtype": "Data",
+   "label": "Total Year(s) of Service"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "reporting_to",
+   "fieldtype": "Data",
+   "label": "Reporting To"
+  },
+  {
+   "fieldname": "attributes_section",
+   "fieldtype": "Section Break",
+   "label": "Attributes"
+  },
+  {
+   "fieldname": "level_of_job_knowledge_as_per_job_description",
+   "fieldtype": "Select",
+   "label": "Level of Job Knowledge as per Job description",
+   "options": "\nExcellent\nVery Good\nGood\nFair\nPoor"
+  },
+  {
+   "fieldname": "skills_technical__operationserviceit",
+   "fieldtype": "Select",
+   "label": "Skills (Technical / Operation/Service/IT)",
+   "options": "\nExcellent\nVery Good\nGood\nFair\nPoor"
+  },
+  {
+   "fieldname": "column_break_nrmu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attitude_no_complaints_issuedpunitive_score",
+   "fieldtype": "Select",
+   "label": "Attitude (No complaints issued/punitive score)",
+   "options": "\nExcellent\nVery Good\nGood\nFair\nPoor"
+  },
+  {
+   "fieldname": "creativity_and_innovation",
+   "fieldtype": "Select",
+   "label": "Creativity & Innovation",
+   "options": "\nExcellent\nVery Good\nGood\nFair\nPoor"
+  },
+  {
+   "fieldname": "leadership_and_goal_achievements",
+   "fieldtype": "Select",
+   "label": "Leadership & Goal Achievements",
+   "options": "\nExcellent\nVery Good\nGood\nFair\nPoor"
+  },
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "last_salary_compensation",
+   "fieldtype": "Currency",
+   "label": "Last Salary compensation"
+  },
+  {
+   "fieldname": "would_you_rehire_the_applicant",
+   "fieldtype": "Small Text",
+   "label": "Would you re-hire the applicant?"
+  },
+  {
+   "fieldname": "column_break_oapa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reason_for_leaving_the_company",
+   "fieldtype": "Small Text",
+   "label": "Reason for Leaving the Company"
+  },
+  {
+   "fieldname": "name_of_person_completed_the_form",
+   "fieldtype": "Link",
+   "label": "Name of Person Completed the Form",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Previous Employment Verification",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-18 08:42:53.624412",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Previous Employment Verification",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Blue",
+   "title": "Pending"
+  },
+  {
+   "color": "Green",
+   "title": "Verified"
+  }
+ ]
+}
