@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-16 13:32:37.497448",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "asset_name",
+  "receiving_date",
+  "make",
+  "model",
+  "qty",
+  "asset_included_items",
+  "column_break_owom",
+  "status",
+  "serial_no",
+  "damage_item_return",
+  "fragility",
+  "purpose"
+ ],
+ "fields": [
+  {
+   "fieldname": "asset_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Asset Name"
+  },
+  {
+   "fieldname": "receiving_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Receiving Date"
+  },
+  {
+   "fieldname": "make",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Make"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Model"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty"
+  },
+  {
+   "fieldname": "asset_included_items",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Asset Included Items"
+  },
+  {
+   "fieldname": "column_break_owom",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nIssued\nReturned"
+  },
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Serial No"
+  },
+  {
+   "fieldname": "damage_item_return",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Damage Item Return",
+   "options": "\nYes\nNo\nOthers"
+  },
+  {
+   "fieldname": "fragility",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Fragility",
+   "options": "\nYes\nNo\nOthers"
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Purpose"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-16 13:32:37.497448",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Asset Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

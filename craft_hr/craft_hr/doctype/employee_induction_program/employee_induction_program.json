@@ -1,0 +1,808 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:EIP-{employee}-{##}",
+ "creation": "2024-11-16 14:37:09.407002",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "position",
+  "department",
+  "email",
+  "column_break_yxdo",
+  "start_date",
+  "manager",
+  "hr_induction_section",
+  "h1",
+  "c1",
+  "c2",
+  "h3",
+  "c5",
+  "c6",
+  "c7",
+  "c8",
+  "h6",
+  "c13",
+  "c14",
+  "c15",
+  "c16",
+  "c17",
+  "c18",
+  "conducted1",
+  "sign1",
+  "column_break_dbys",
+  "h2",
+  "c3",
+  "c4",
+  "h4",
+  "c9",
+  "h5",
+  "c10",
+  "c11",
+  "h7",
+  "c19",
+  "c20",
+  "c21",
+  "c22",
+  "c23",
+  "c24",
+  "date1",
+  "start_time1",
+  "end_time1",
+  "hse_induction_section",
+  "h8",
+  "c25",
+  "c26",
+  "c27",
+  "c28",
+  "c29",
+  "h10",
+  "c34",
+  "c35",
+  "c36",
+  "conducted2",
+  "sign2",
+  "column_break_utkh",
+  "h9",
+  "c30",
+  "c31",
+  "c32",
+  "c33",
+  "h11",
+  "c37",
+  "c38",
+  "c39",
+  "date2",
+  "start_time2",
+  "end_time2",
+  "it_induction_section",
+  "h12",
+  "c40",
+  "c41",
+  "c42",
+  "c43",
+  "c44",
+  "conducted3",
+  "sign3",
+  "column_break_mtqy",
+  "h13",
+  "c45",
+  "c46",
+  "c47",
+  "c48",
+  "c49",
+  "date3",
+  "start_time3",
+  "end_time3",
+  "forms_issued_section",
+  "c50",
+  "c51",
+  "c52",
+  "c53",
+  "c54",
+  "column_break_egqv",
+  "other_forms",
+  "section_break_amgh",
+  "comments",
+  "employee_comments",
+  "section_break_ncsb",
+  "reviewed_by",
+  "column_break_ozdo",
+  "hr_qhse",
+  "column_break_bdnr",
+  "final_date",
+  "section_break_ddjs",
+  "column_break_zaku",
+  "employee_submitting_date",
+  "column_break_narr",
+  "employee_signature",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "position",
+   "fieldtype": "Link",
+   "label": "Position/Job",
+   "options": "Designation"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department/Section",
+   "options": "Department"
+  },
+  {
+   "fetch_from": "employee.company_email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_yxdo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": " Employment Start Date"
+  },
+  {
+   "fetch_from": ".employee_name",
+   "fieldname": "manager",
+   "fieldtype": "Link",
+   "label": "Manager/Supervisor",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "hr_induction_section",
+   "fieldtype": "Section Break",
+   "label": "HR Induction"
+  },
+  {
+   "fieldname": "h1",
+   "fieldtype": "Heading",
+   "label": "Explain Your Business"
+  },
+  {
+   "default": "0",
+   "fieldname": "c1",
+   "fieldtype": "Check",
+   "label": "The Structure"
+  },
+  {
+   "default": "0",
+   "fieldname": "c2",
+   "fieldtype": "Check",
+   "label": "The Type of Work"
+  },
+  {
+   "fieldname": "h3",
+   "fieldtype": "Heading",
+   "label": "List and introduce your key people and their roles"
+  },
+  {
+   "default": "0",
+   "fieldname": "c5",
+   "fieldtype": "Check",
+   "label": "Manager/owner"
+  },
+  {
+   "default": "0",
+   "fieldname": "c6",
+   "fieldtype": "Check",
+   "label": "Supervisor(s)"
+  },
+  {
+   "default": "0",
+   "fieldname": "c7",
+   "fieldtype": "Check",
+   "label": "Co workers"
+  },
+  {
+   "default": "0",
+   "fieldname": "c8",
+   "fieldtype": "Check",
+   "label": "Health and safety representative(s)"
+  },
+  {
+   "fieldname": "h6",
+   "fieldtype": "Heading",
+   "label": "Explain their employment conditions"
+  },
+  {
+   "default": "0",
+   "fieldname": "c13",
+   "fieldtype": "Check",
+   "label": "Job description and responsibilities"
+  },
+  {
+   "default": "0",
+   "fieldname": "c14",
+   "fieldtype": "Check",
+   "label": "Leave entitlements"
+  },
+  {
+   "default": "0",
+   "fieldname": "c15",
+   "fieldtype": "Check",
+   "label": "Notification of sick leave or absences"
+  },
+  {
+   "default": "0",
+   "fieldname": "c16",
+   "fieldtype": "Check",
+   "label": "Out of hours enquiries and emergency procedures"
+  },
+  {
+   "default": "0",
+   "fieldname": "c17",
+   "fieldtype": "Check",
+   "label": "Time recording procedures"
+  },
+  {
+   "default": "0",
+   "fieldname": "c18",
+   "fieldtype": "Check",
+   "label": "Work times and meal breaks"
+  },
+  {
+   "fetch_from": ".",
+   "fieldname": "conducted1",
+   "fieldtype": "Link",
+   "label": "Conducted By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "sign1",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "column_break_dbys",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "h2",
+   "fieldtype": "Heading",
+   "label": "Explain Their Pay"
+  },
+  {
+   "default": "0",
+   "fieldname": "c3",
+   "fieldtype": "Check",
+   "label": "Pay arrangements"
+  },
+  {
+   "default": "0",
+   "fieldname": "c4",
+   "fieldtype": "Check",
+   "label": "Opening of Bank Account"
+  },
+  {
+   "fieldname": "h4",
+   "fieldtype": "Heading",
+   "label": "Insurance Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "c9",
+   "fieldtype": "Check",
+   "label": "Name of the plan and Benefits"
+  },
+  {
+   "fieldname": "h5",
+   "fieldtype": "Heading",
+   "label": "Explain your security"
+  },
+  {
+   "default": "0",
+   "fieldname": "c10",
+   "fieldtype": "Check",
+   "label": "Cash"
+  },
+  {
+   "default": "0",
+   "fieldname": "c11",
+   "fieldtype": "Check",
+   "label": "For each worker and for their personal belongings"
+  },
+  {
+   "fieldname": "h7",
+   "fieldtype": "Heading",
+   "label": "Show your work environment"
+  },
+  {
+   "default": "0",
+   "fieldname": "c19",
+   "fieldtype": "Check",
+   "label": "Car parking"
+  },
+  {
+   "default": "0",
+   "fieldname": "c20",
+   "fieldtype": "Check",
+   "label": "Eating facilities"
+  },
+  {
+   "default": "0",
+   "fieldname": "c21",
+   "fieldtype": "Check",
+   "label": "Locker and change rooms"
+  },
+  {
+   "default": "0",
+   "fieldname": "c22",
+   "fieldtype": "Check",
+   "label": "Phone calls and message collecting system"
+  },
+  {
+   "default": "0",
+   "fieldname": "c23",
+   "fieldtype": "Check",
+   "label": "Washing and toilet facilities"
+  },
+  {
+   "default": "0",
+   "fieldname": "c24",
+   "fieldtype": "Check",
+   "label": "Work station, tools, machinery and equipment used for job"
+  },
+  {
+   "fieldname": "date1",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "start_time1",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time1",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "hse_induction_section",
+   "fieldtype": "Section Break",
+   "label": "HSE Induction"
+  },
+  {
+   "fieldname": "h8",
+   "fieldtype": "Heading",
+   "label": "Explain your work health and safety administration"
+  },
+  {
+   "default": "0",
+   "fieldname": "c25",
+   "fieldtype": "Check",
+   "label": "HSE policy and Objectives to the relevant areas"
+  },
+  {
+   "default": "0",
+   "fieldname": "c26",
+   "fieldtype": "Check",
+   "label": "OHS risks and Environment impact assessment"
+  },
+  {
+   "default": "0",
+   "fieldname": "c27",
+   "fieldtype": "Check",
+   "label": "Location of fire extinguishers, emergency procedures and assembly areas"
+  },
+  {
+   "default": "0",
+   "fieldname": "c28",
+   "fieldtype": "Check",
+   "label": "Hazards of work"
+  },
+  {
+   "default": "0",
+   "fieldname": "c29",
+   "fieldtype": "Check",
+   "label": "Ergonomics"
+  },
+  {
+   "fieldname": "h10",
+   "fieldtype": "Heading",
+   "label": "First Aid"
+  },
+  {
+   "default": "0",
+   "fieldname": "c34",
+   "fieldtype": "Check",
+   "label": "Location of First Aid Kits"
+  },
+  {
+   "default": "0",
+   "fieldname": "c35",
+   "fieldtype": "Check",
+   "label": "How to contact First Aider"
+  },
+  {
+   "default": "0",
+   "fieldname": "c36",
+   "fieldtype": "Check",
+   "label": "Process and importance of incident report within 24 hours"
+  },
+  {
+   "fieldname": "conducted2",
+   "fieldtype": "Link",
+   "label": "Conducted By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "sign2",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "column_break_utkh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "h9",
+   "fieldtype": "Heading",
+   "label": "Explain your work health and safety yard/workshop"
+  },
+  {
+   "default": "0",
+   "fieldname": "c30",
+   "fieldtype": "Check",
+   "label": "Appropriate PPE"
+  },
+  {
+   "default": "0",
+   "fieldname": "c31",
+   "fieldtype": "Check",
+   "label": "Work Instruction, Risk Assessment and Environment Impact Assessment"
+  },
+  {
+   "default": "0",
+   "fieldname": "c32",
+   "fieldtype": "Check",
+   "label": "Location of nearest safety shower, eyewash station, spill kit, fire extinguisher, emergency and gas shut off"
+  },
+  {
+   "default": "0",
+   "fieldname": "c33",
+   "fieldtype": "Check",
+   "label": "Process and importance of incident reporting within 24 hours"
+  },
+  {
+   "fieldname": "h11",
+   "fieldtype": "Heading",
+   "label": "HSE"
+  },
+  {
+   "default": "0",
+   "fieldname": "c37",
+   "fieldtype": "Check",
+   "label": "Role of Health and Safety Representative"
+  },
+  {
+   "default": "0",
+   "fieldname": "c38",
+   "fieldtype": "Check",
+   "label": "Procedures for consultation"
+  },
+  {
+   "default": "0",
+   "fieldname": "c39",
+   "fieldtype": "Check",
+   "label": "Issue resolution for immediate and non immediate OHS Hazards"
+  },
+  {
+   "fieldname": "date2",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "start_time2",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time2",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "it_induction_section",
+   "fieldtype": "Section Break",
+   "label": "IT Induction"
+  },
+  {
+   "fieldname": "h12",
+   "fieldtype": "Heading",
+   "label": "Information Technology"
+  },
+  {
+   "default": "0",
+   "fieldname": "c40",
+   "fieldtype": "Check",
+   "label": "Policy and Procedure"
+  },
+  {
+   "default": "0",
+   "fieldname": "c41",
+   "fieldtype": "Check",
+   "label": "Asset"
+  },
+  {
+   "default": "0",
+   "fieldname": "c42",
+   "fieldtype": "Check",
+   "label": "Internet"
+  },
+  {
+   "default": "0",
+   "fieldname": "c43",
+   "fieldtype": "Check",
+   "label": "Printer, Copy, Scan"
+  },
+  {
+   "default": "0",
+   "fieldname": "c44",
+   "fieldtype": "Check",
+   "label": "IP Phone and Mobile Phone Call Policy"
+  },
+  {
+   "fieldname": "conducted3",
+   "fieldtype": "Link",
+   "label": "Conducted By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "sign3",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "column_break_mtqy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "h13",
+   "fieldtype": "Heading",
+   "label": "Information Technology"
+  },
+  {
+   "default": "0",
+   "fieldname": "c45",
+   "fieldtype": "Check",
+   "label": "Service and Support"
+  },
+  {
+   "default": "0",
+   "fieldname": "c46",
+   "fieldtype": "Check",
+   "label": "Email"
+  },
+  {
+   "default": "0",
+   "fieldname": "c47",
+   "fieldtype": "Check",
+   "label": "Security"
+  },
+  {
+   "default": "0",
+   "fieldname": "c48",
+   "fieldtype": "Check",
+   "label": "Confidentiality, Ownership"
+  },
+  {
+   "default": "0",
+   "fieldname": "c49",
+   "fieldtype": "Check",
+   "label": "Biometric Attendance"
+  },
+  {
+   "fieldname": "date3",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "start_time3",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time3",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "forms_issued_section",
+   "fieldtype": "Section Break",
+   "label": "Forms Issued"
+  },
+  {
+   "default": "0",
+   "fieldname": "c50",
+   "fieldtype": "Check",
+   "label": "Job Description"
+  },
+  {
+   "default": "0",
+   "fieldname": "c51",
+   "fieldtype": "Check",
+   "label": "Attendance Policy"
+  },
+  {
+   "default": "0",
+   "fieldname": "c52",
+   "fieldtype": "Check",
+   "label": "IT Policy"
+  },
+  {
+   "default": "0",
+   "fieldname": "c53",
+   "fieldtype": "Check",
+   "label": "QHSE Policy"
+  },
+  {
+   "default": "0",
+   "fieldname": "c54",
+   "fieldtype": "Check",
+   "label": "Code of Conduct"
+  },
+  {
+   "fieldname": "column_break_egqv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "other_forms",
+   "fieldtype": "Small Text",
+   "label": "Other Forms "
+  },
+  {
+   "fieldname": "section_break_amgh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments and follow up action"
+  },
+  {
+   "fieldname": "employee_comments",
+   "fieldtype": "Small Text",
+   "label": "Employee Comments and Suggestions"
+  },
+  {
+   "fieldname": "section_break_ncsb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_ozdo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": ".",
+   "fieldname": "hr_qhse",
+   "fieldtype": "Link",
+   "label": "HR/QHSE Manager",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_bdnr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "final_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_ddjs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_zaku",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee_submitting_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_narr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee_signature",
+   "fieldtype": "Signature",
+   "label": "Employee Signature"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Induction Program",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-16 14:37:53.030380",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Employee Induction Program",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

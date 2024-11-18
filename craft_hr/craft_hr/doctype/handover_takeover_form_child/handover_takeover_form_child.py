@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class EmployeeJoiningReport(Document):
+class HandoverTakeoverFormChild(Document):
 	pass
