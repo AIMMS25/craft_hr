@@ -1,0 +1,500 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:ESS-{YYYY}-{#####}",
+ "creation": "2024-11-18 10:50:16.978484",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "column_break_nvco",
+  "company",
+  "section_break_vwrz",
+  "rating_description",
+  "attribute_section",
+  "q1",
+  "q3",
+  "column_break_gkte",
+  "q2",
+  "q4",
+  "strategy_section",
+  "q5",
+  "column_break_qfuy",
+  "q6",
+  "performance_appraisal_section",
+  "q7",
+  "q9",
+  "column_break_cudf",
+  "q8",
+  "my_manager_section",
+  "q10",
+  "q12",
+  "q14",
+  "column_break_czyw",
+  "q11",
+  "q13",
+  "teamwork_section",
+  "q15",
+  "column_break_lqey",
+  "q16",
+  "communication_section",
+  "q17",
+  "column_break_pxsq",
+  "q18",
+  "career_development_section",
+  "q19",
+  "q21",
+  "column_break_znzm",
+  "q20",
+  "q22",
+  "pay_and_benefits_section",
+  "q23",
+  "q25",
+  "column_break_ekwn",
+  "q24",
+  "recognition_and_development_section",
+  "q26",
+  "q28",
+  "column_break_qgrh",
+  "q27",
+  "chain_management_section",
+  "q29",
+  "column_break_yelh",
+  "q30",
+  "corporate_culture_section",
+  "q31",
+  "q33",
+  "column_break_ybch",
+  "q32",
+  "future_ways_of_working_section",
+  "q34",
+  "column_break_msly",
+  "q35",
+  "section_break_fmuo",
+  "question",
+  "no_years",
+  "section_break_lofy",
+  "department",
+  "age_band",
+  "column_break_uvqu",
+  "gender",
+  "nationality"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "rating_description",
+   "fieldtype": "HTML",
+   "label": "Rating Description",
+   "options": "<table class=\"table table-bordered\" style=\"width:100%;background-color:#edd3b7;\">\n<tbody><tr>\n<td><b>Rating Guide</b></td>\n<td>1 - Frustrated</td>\n<td>2 - Dissatisfied</td>\n<td>3 - Neutral</td>\n<td>4 - Satisfied</td>\n<td>5 - Delighted</td>\n</tr></tbody></table>"
+  },
+  {
+   "fieldname": "attribute_section",
+   "fieldtype": "Section Break",
+   "label": "Leadership"
+  },
+  {
+   "fieldname": "q1",
+   "fieldtype": "Select",
+   "label": "I have confidence in the leadership of the Company",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "q3",
+   "fieldtype": "Select",
+   "label": "Leaders support and enable people to manage change",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "column_break_gkte",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q2",
+   "fieldtype": "Select",
+   "label": "Senior Management lead by example",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "q4",
+   "fieldtype": "Select",
+   "label": "Managers act as role models for People value, Innovation value & Ethics",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "strategy_section",
+   "fieldtype": "Section Break",
+   "label": "Strategy"
+  },
+  {
+   "fieldname": "q5",
+   "fieldtype": "Select",
+   "label": "I have a good understanding of the mission and the goals of this organization",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "column_break_qfuy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q6",
+   "fieldtype": "Select",
+   "label": "I have confidence in the future direction of the Company",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "performance_appraisal_section",
+   "fieldtype": "Section Break",
+   "label": "Performance Appraisal"
+  },
+  {
+   "fieldname": "q7",
+   "fieldtype": "Select",
+   "label": "My last performance appraisal accurately reflected my performance",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "q9",
+   "fieldtype": "Select",
+   "label": "Employee performance evaluations are fair and appropriate",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "column_break_cudf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q8",
+   "fieldtype": "Select",
+   "label": "I receive feedback that helps me improve my performance",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "my_manager_section",
+   "fieldtype": "Section Break",
+   "label": "My Manager"
+  },
+  {
+   "fieldname": "q10",
+   "fieldtype": "Select",
+   "label": "My supervisor gives me praise and recognition when I do a good job",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "q12",
+   "fieldtype": "Select",
+   "label": "I receive useful and constructive feedback from my manager",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "q14",
+   "fieldtype": "Select",
+   "label": "My supervisor is committed to my development",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "column_break_czyw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q11",
+   "fieldtype": "Select",
+   "label": "My supervisor provides me regular information about the mission and the goals of this organization",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "q13",
+   "fieldtype": "Select",
+   "label": "I can discuss work problems with my superior",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "teamwork_section",
+   "fieldtype": "Section Break",
+   "label": "Teamwork"
+  },
+  {
+   "fieldname": "q15",
+   "fieldtype": "Select",
+   "label": "Team work is encouraged and practiced in this organization",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "column_break_lqey",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q16",
+   "fieldtype": "Select",
+   "label": "There is a strong feeling of teamwork and cooperation in this organization",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "communication_section",
+   "fieldtype": "Section Break",
+   "label": "Communication"
+  },
+  {
+   "fieldname": "q17",
+   "fieldtype": "Select",
+   "label": "Information and knowledge are shared openly within this organization",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "column_break_pxsq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q18",
+   "fieldtype": "Select",
+   "label": "Changes that affect me are communicated openly",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "career_development_section",
+   "fieldtype": "Section Break",
+   "label": "Career Development"
+  },
+  {
+   "fieldname": "q19",
+   "fieldtype": "Select",
+   "label": "The company is committed to develop my career",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "q21",
+   "fieldtype": "Select",
+   "label": "I have received training necessary for job",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "column_break_znzm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q20",
+   "fieldtype": "Select",
+   "label": "I understand how my training is linked to business needs",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "q22",
+   "fieldtype": "Select",
+   "label": "The training I received has helped improve my performance",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "pay_and_benefits_section",
+   "fieldtype": "Section Break",
+   "label": "Pay and Benefits"
+  },
+  {
+   "fieldname": "q23",
+   "fieldtype": "Select",
+   "label": "My pay is fair compared to other employ in the company doing similar work",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "q25",
+   "fieldtype": "Select",
+   "label": "I am satisfied with the level of pay I received",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "column_break_ekwn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q24",
+   "fieldtype": "Select",
+   "label": "My benefits package is fair compared with those offered by similar organizations",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "recognition_and_development_section",
+   "fieldtype": "Section Break",
+   "label": "Recognition and Development"
+  },
+  {
+   "fieldname": "q26",
+   "fieldtype": "Select",
+   "label": "I am satisfied with reward and recognition",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "q28",
+   "fieldtype": "Select",
+   "label": "The organization supports empowerment, recognition and development",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "column_break_qgrh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q27",
+   "fieldtype": "Select",
+   "label": "The company recognizes employees who make a positive contribution",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "chain_management_section",
+   "fieldtype": "Section Break",
+   "label": "Chain Management"
+  },
+  {
+   "fieldname": "q29",
+   "fieldtype": "Select",
+   "label": "The organization is proactive in implementing changes to address challenges and opportunities",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "column_break_yelh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q30",
+   "fieldtype": "Select",
+   "label": "The organization takes the initiative to lead by example",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "corporate_culture_section",
+   "fieldtype": "Section Break",
+   "label": "Corporate Culture"
+  },
+  {
+   "fieldname": "q31",
+   "fieldtype": "Select",
+   "label": "The organizational culture of the company enhances team work",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "q33",
+   "fieldtype": "Select",
+   "label": "I am satisfied with the company's contribution towards gender balance, parity, diversity and inclusion",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "column_break_ybch",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q32",
+   "fieldtype": "Select",
+   "label": "The organizational culture of the company encourages high performance and process improvement",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "future_ways_of_working_section",
+   "fieldtype": "Section Break",
+   "label": "Future Ways of Working"
+  },
+  {
+   "fieldname": "q34",
+   "fieldtype": "Select",
+   "label": "The organization is adapting new technology",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "column_break_msly",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "q35",
+   "fieldtype": "Select",
+   "label": "The organization promotes remote working and virtual reality",
+   "options": "\n1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "section_break_fmuo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "question",
+   "fieldtype": "Small Text",
+   "label": "What can be done to improve employee satisfaction in the company?"
+  },
+  {
+   "fieldname": "no_years",
+   "fieldtype": "Int",
+   "label": "No of years working with the company"
+  },
+  {
+   "fieldname": "section_break_lofy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "age_band",
+   "fieldtype": "Select",
+   "label": "Age Band",
+   "options": "\n20 \u2013 25 years\n26 \u2013 30 years\n31 \u2013 35 years\n35 \u2013 40 years\n40 & Above"
+  },
+  {
+   "fieldname": "column_break_uvqu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.gender",
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fetch_from": "employee.custom_nationality",
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "fieldname": "column_break_nvco",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "section_break_vwrz",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-18 10:55:46.543697",
+ "modified_by": "Administrator",
+ "module": "Craft HR",
+ "name": "Employee Satisfaction Survey",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
