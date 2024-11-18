@@ -8,13 +8,11 @@ app_email = "info@craftinteractive.ae"
 app_license = "MIT"
 
 fixtures = [
-    {'dt':'Custom Field', 'filters':[['module', 'in', {"Craft HR", "OT Mgmt"}]]},
+    {'dt':'Custom Field', 'filters':[['module', 'in', {"Craft HR", "OT Mgmt","Accommodation","Fleet Management"}]]},
     {'dt':'Property Setter', 'filters':[['module', 'in', {"Craft HR", "OT Mgmt"}]]},
     {'dt':'Report', 'filters':[['name', 'in', {"Overtime Summary"}]]},
-    {'dt':'Custom Field', 'filters':[['module', 'in', {"Craft HR", "Accommodation"}]]},
-    {'dt':'Custom Field', 'filters':[['module', 'in', {"Craft HR", "Fleet Management"}]]},
-
     ]
+
 # Includes in <head>
 # ------------------
 
@@ -40,7 +38,9 @@ fixtures = [
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 
 doctype_js = {
-    "Leave Allocation":"public/js/leave_allocation.js"
+    "Leave Allocation":"public/js/leave_allocation.js",
+    "Employee Promotion" : "public/js/employee_promotion.js"
+
 }
 
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -162,7 +162,11 @@ doc_events = {
 	},
     "Shift Type": {
         "before_validate":"craft_hr.events.shift_type.before_validate"
-	}
+	},
+     "Employee Promotion" : {
+        "on_submit" :"craft_hr.events.employee_promotion.on_submit",
+        "before_validate" : "craft_hr.events.employee_promotion.before_validate"
+    },
 }
 
 # Scheduled Tasks
