@@ -6,7 +6,17 @@ from frappe.model.document import Document
 
 
 class SalaryIncrement(Document):
-	pass
+    def validate(self):
+        salary_structure_assignment = frappe.db.sql("""
+            SELECT name FROM `tabSalary Structure Assignment`
+            WHERE employee = %s AND docstatus = 1
+            ORDER BY creation DESC
+            LIMIT 1
+        """, (self.employee), as_dict=True)
+
+        if not salary_structure_assignment:
+            frappe.throw(f"No Salary Structure Assignment found for employee {self.employee}. Please ensure an active Salary Structure Assignment exists before saving.")
+
 
 @frappe.whitelist()
 def latest_salary_structure(employee):
@@ -23,22 +33,15 @@ def latest_salary_structure(employee):
             "basic": ssa_doc.sc_basic,
             "hra": ssa_doc.sc_hra,
             "transport_allowance": ssa_doc.sc_transport,
-            "cost_of_living_allowance" : ssa_doc.sc_cola,
+            "cost_of_living_allowance": ssa_doc.sc_cola,
             "other_allowance": ssa_doc.sc_other,
-            "insurance_allowance" : ssa_doc.sc_insurance,
-            "food_allowance" : ssa_doc.sc_food,
-            "car_allowance" : ssa_doc.sc_car,
-            "mobile_allowance" :ssa_doc.sc_mobile,
-            "overtime_hourly_rate":ssa_doc.ot_rate,
-            "fuel_allowance" :ssa_doc.sc_fuel,
-            "leave_encashment_amount_per_day" :ssa_doc.custom_leave_encashment_amount_per_day,
-            "job_well_done" :ssa_doc.sc_jwd,
-            "position_level" :ssa_doc.sc_position_level,
-            "attendance_bonus" :ssa_doc.sc_attendance_bonus,
-            "holiday_overtime_rate" :ssa_doc.holiday_ot_rate
-            
+            "car_allowance": ssa_doc.sc_car,
+            "mobile_allowance": ssa_doc.sc_mobile,
+            "overtime_hourly_rate": ssa_doc.ot_rate,
+            "fuel_allowance": ssa_doc.sc_fuel,
+            "leave_encashment_amount_per_day": ssa_doc.custom_leave_encashment_amount_per_day,
+            "holiday_overtime_rate": ssa_doc.holiday_ot_rate
         }
         return components
     else:
         frappe.throw(f"No Salary Structure Assignment found for employee {employee}")
-
