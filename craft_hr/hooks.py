@@ -160,6 +160,9 @@ doc_events = {
 	},
     "Shift Type": {
         "before_validate":"craft_hr.events.shift_type.before_validate"
+	},
+    "Salary Structure Assignment": {
+        "validate":"craft_hr.events.salary_structure_assignment.validate"
 	}
 }
 
