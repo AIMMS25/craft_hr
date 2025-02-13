@@ -13,5 +13,5 @@ def validate(doc, method):
     if payroll_entries:
         payroll_names = ", ".join(pe[0] for pe in payroll_entries)
         frappe.throw(
-            f"Cannot amend the Salary Structure Assignment. Payroll entries already exist for this period.{payroll_names}"
+            f"Cannot amend the Salary Structure Assignment. A payroll entry ({payroll_names}) has already been processed for this period. "
         )
