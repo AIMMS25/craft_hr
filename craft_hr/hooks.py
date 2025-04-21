@@ -175,7 +175,9 @@ scheduler_events = {
 	# ],
 	"daily": [
 		"craft_hr.tasks.daily.reset_leave_allocation",
-		"craft_hr.tasks.daily.update_leave_allocations"
+		"craft_hr.tasks.daily.update_leave_allocations",
+        "craft_hr.craft_hr.doctype.ticket_allocation.ticket_allocation.daily_event",
+
 	],
 	# "hourly": [
 	# 	"craft_hr.tasks.hourly"
