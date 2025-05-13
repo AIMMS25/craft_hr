@@ -1,4 +1,3 @@
-
 frappe.ui.form.on("Leave Allocation",{
     refresh: function(frm){
         frappe.db.get_single_value("Craft HR Settings", "leave_allocation_based_on_leave_distribution_template").then((value) => {
@@ -29,30 +28,5 @@ frappe.ui.form.on("Leave Allocation",{
                 }
             })
         }
-    },
-    custom_carry_forward: function(frm){
-        if (frm.doc.custom_carry_forward && frm.doc.custom_is_earned_leave){
-            frm.trigger("calculate_leaves_allocated")
-        }
-    },
-    calculate_leaves_allocated: function(frm){
-        if (cint(frm.doc.custom_carry_forward) == 1 && frm.doc.leave_type && frm.doc.employee) {
-			return frappe.call({
-				method: "craft_hr.events.get_leaves.get_carry_forwarded_leave",
-				args:{
-                    employee: frm.doc.employee,
-                    leave_type: frm.doc.leave_type, 
-                    date:frm.doc.from_date, 
-                    carry_forward:frm.doc.carry_forward
-                },
-				callback: function(r) {
-                    if (r.message != frm.doc.custom_opening_leaves){
-                        frm.set_value("custom_opening_leaves", r.message)
-                        frm.refresh()
-                    }
-				}
-			});
-		} 
     }
-
 })
