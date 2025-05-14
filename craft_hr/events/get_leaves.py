@@ -49,3 +49,4 @@ def get_earned_leave(employee=None):
         doc.new_leaves_allocated = earned_leaves - doc.custom_opening_used_leaves
         doc.custom_used_leaves = doc.custom_opening_used_leaves + new_used_leaves
         doc.custom_available_leaves = doc.new_leaves_allocated - new_used_leaves
+        doc.save()
