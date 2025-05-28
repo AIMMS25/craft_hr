@@ -9,7 +9,9 @@ frappe.ui.form.on('Monthly Overtime Sheet', {
                 fields: ['name', 'employee_name', 'department'],
                 filters: {
                     status: 'Active',
-                    company: frm.doc.company
+                    company: frm.doc.company,
+                    department:frm.doc.department,
+                    branch:frm.doc.branch
                 },
                 limit: 0,
                 order_by: 'name asc'
@@ -30,4 +32,5 @@ frappe.ui.form.on('Monthly Overtime Sheet', {
             });
         }
     },
+    
 });
