@@ -121,3 +121,158 @@ def validate(self, method):
                 total_prorated_base += proprated_base
 
         self.custom_leave_salary = total_prorated_base
+
+
+from frappe.utils import getdate, get_last_day, get_first_day, date_diff, add_days
+import frappe
+
+def create_deferred_leave_additional_salary(doc, method):
+    if not doc.leave_type or not doc.total_leave_days:
+        return
+
+    is_deferred = frappe.db.get_value("Leave Type", doc.leave_type, "custom_is_deferred_leave")
+    if not is_deferred:
+        return
+
+    component = frappe.db.get_value("Salary Component", {
+        "custom_is_deferred_leave_component": 1,
+        "type": "Deduction",
+        "disabled": 0
+    }, "name")
+
+    if not component:
+        frappe.throw("No Deduction Salary Component found with 'Is Deferred Leave Component' enabled.")
+
+    from_date = getdate(doc.from_date)
+    to_date = getdate(doc.to_date)
+    employee = doc.employee
+
+    # Get employee holiday list
+    holiday_list = frappe.db.get_value("Employee", employee, "holiday_list")
+    holiday_dates = []
+    if holiday_list:
+        holiday_dates = frappe.db.get_all("Holiday", filters={"parent": holiday_list}, pluck="holiday_date")
+        holiday_dates = [getdate(d) for d in holiday_dates]
+
+    # Group leave by month
+    current = from_date
+    while current <= to_date:
+        month_start = get_first_day(current)
+        month_end = get_last_day(current)
+        period_start = max(from_date, month_start)
+        period_end = min(to_date, month_end)
+
+        # Get salary structures during this month period
+        ssa_list = frappe.db.sql("""
+            SELECT name, from_date
+            FROM `tabSalary Structure Assignment`
+            WHERE employee = %s AND from_date <= %s
+            AND docstatus =1
+            ORDER BY from_date ASC
+        """, (employee, period_end), as_dict=True)
+
+        if not ssa_list:
+            frappe.throw(f"No Salary Structure Assignment found for employee {employee} on or before {period_end}")
+
+        # Append end date to calculate duration for each SSA
+        for i in range(len(ssa_list)):
+            ssa_list[i]["end_date"] = ssa_list[i+1]["from_date"] if i+1 < len(ssa_list) else period_end + timedelta(days=1)
+
+        # For each SSA, calculate leave days within its range
+        total_amount = 0
+        for ssa in ssa_list:
+            ssa_start = max(period_start, getdate(ssa["from_date"]))
+            ssa_end = min(period_end, getdate(ssa["end_date"]) - timedelta(days=1))
+            if ssa_start > ssa_end:
+                continue
+
+            working_days = count_working_days(ssa_start, ssa_end, holiday_dates)
+            if working_days <= 0:
+                continue
+
+            component_row = frappe.db.get_value("Salary Structure Assignment", ssa["name"], [
+                "sc_basic", "sc_hra", "sc_transport", "sc_cola", "sc_other",
+                "sc_fuel", "sc_mobile", "sc_car"
+            ], as_dict=True)
+
+            total_component = sum([
+                component_row.get("sc_basic") or 0,
+                component_row.get("sc_hra") or 0,
+                component_row.get("sc_transport") or 0,
+                component_row.get("sc_cola") or 0,
+                component_row.get("sc_other") or 0,
+                component_row.get("sc_fuel") or 0,
+                component_row.get("sc_mobile") or 0,
+                component_row.get("sc_car") or 0
+            ])
+
+            per_day = (total_component * 12) / 365
+            total_amount += per_day * working_days
+
+        if total_amount > 0:
+            payroll_date = period_end
+            _create_additional_salary(employee, component, total_amount, payroll_date, doc)
+
+        current = get_first_day(add_days(current, 32))  # move to next month
+
+    frappe.msgprint("Deferred Leave Additional Salary created.", alert=True)
+
+
+def count_working_days(start, end, holidays):
+    days = 0
+    current = start
+    while current <= end:
+        if current not in holidays:
+            days += 1
+        current = add_days(current, 1)
+    return days
+
+
+def _create_additional_salary(employee, component, amount, payroll_date, doc):
+    additional_salary = frappe.new_doc("Additional Salary")
+    additional_salary.update({
+        "employee": employee,
+        "salary_component": component,
+        "amount": round(amount, 2),
+        "payroll_date": payroll_date,
+        "overwrite_salary_structure_amount": 1,
+        "ref_doctype": "Leave Application",
+        "ref_docname": doc.name
+    })
+    additional_salary.insert()
+    additional_salary.submit()
+
+
+
+
+def cancel_linked_additional_salary(doc, method):
+    additional_salaries = frappe.get_all("Additional Salary", 
+        filters={
+            "ref_doctype": "Leave Application",
+            "ref_docname": doc.name,
+            "docstatus": 1
+        },
+        pluck="name"
+    )
+
+    for name in additional_salaries:
+        additional_salary = frappe.get_doc("Additional Salary", name)
+        additional_salary.cancel()
+
+    if additional_salaries:
+        frappe.msgprint(
+            "The linked Additional Salary has been cancelled.",
+            alert=True
+        )
+
+
+def delete_deferred_leave_additional_salary(doc, method):
+    additional_salary = frappe.get_all("Additional Salary", filters={
+        "ref_doctype": "Leave Application",
+        "ref_docname": doc.name,
+        "docstatus": ("=", 2)
+    })
+
+    for salary in additional_salary:
+        doc_to_delete = frappe.get_doc("Additional Salary", salary.name)
+        doc_to_delete.delete()

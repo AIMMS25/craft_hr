@@ -38,7 +38,8 @@ fixtures = [
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 
 doctype_js = {
-    "Leave Allocation":"public/js/leave_allocation.js"
+    "Leave Allocation":"public/js/leave_allocation.js",
+    "Additional Salary":"public/js/additional_salary.js"
 }
 
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -149,7 +150,13 @@ doc_events = {
         # "after_submit": "craft_hr.events.leave_allocation.after_submit",
     },
     "Leave Application":{
-        "on_submit": "craft_hr.events.leave_application.on_submit"
+        "on_submit": "craft_hr.events.leave_application.on_submit",
+        "on_submit": "craft_hr.events.leave_application.create_deferred_leave_additional_salary",
+        "on_cancel": "craft_hr.events.leave_application.cancel_linked_additional_salary",
+        "on_trash": "craft_hr.events.leave_application.delete_deferred_leave_additional_salary"
+
+
+
     },
     "Attendance":{
         "on_submit": "craft_hr.events.attendance.on_submit",
@@ -163,7 +170,12 @@ doc_events = {
 	},
     "Salary Structure Assignment": {
         "validate":"craft_hr.events.salary_structure_assignment.validate"
-	}
+	},
+    "Additional Salary": {
+        "before_submit": "craft_hr.events.additional_salary.mark_deductions_as_reimbursed",
+        "on_cancel": "craft_hr.events.additional_salary.unmark_deductions_as_reimbursed"
+
+    }
 }
 
 # Scheduled Tasks
