@@ -85,7 +85,7 @@ frappe.query_reports["Monthly Attendance Sheet"] = {
 	},
 	formatter: function (value, row, column, data, default_formatter) {
 		value = default_formatter(value, row, column, data);
-		const summarized_view = frappe.query_report.get_filter_value("summarized_view New");
+		const summarized_view = frappe.query_report.get_filter_value("summarized_view Aimms");
 		const group_by = frappe.query_report.get_filter_value("group_by");
 
 		if (group_by && column.colIndex === 1) {
