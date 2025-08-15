@@ -10,10 +10,10 @@
  "modified": "2017-02-24 20:16:50.550242", 
  "modified_by": "Administrator", 
  "module": "HR", 
- "name": "new Monthly Attendance Sheet", 
+ "name": "new Monthly Attendance Sheet1", 
  "owner": "Administrator", 
  "ref_doctype": "Attendance", 
- "report_name": "new Monthly Attendance Sheet", 
+ "report_name": "new Monthly Attendance Sheet1", 
  "report_type": "Script Report", 
  "roles": [
   {
