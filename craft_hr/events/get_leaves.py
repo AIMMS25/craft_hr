@@ -40,6 +40,8 @@ def get_earned_leave(employee=None, leave_type=None):
     }
     if employee:
         filters['employee'] = employee
+    if leave_type:
+        filters['leave_type'] = leave_type    
     for la in frappe.db.get_list('Leave Allocation', filters):
         doc = frappe.get_doc('Leave Allocation', la.name)
         to_date = frappe.utils.getdate()
