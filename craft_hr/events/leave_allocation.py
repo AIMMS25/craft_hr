@@ -20,6 +20,7 @@ def before_submit(doc,method):
 def close_allocation(docname):
     doc = frappe.get_doc("Leave Allocation", docname)
     #Running get earned leave to ensure correct calculation of balance leave before closing
-    get_earned_leave(doc.employee)
+    #get_earned_leave(doc.employee)
+    get_earned_leave(doc.employee, doc.leave_type)
     doc.db_set("custom_status", "Closed")
     doc.db_set("to_date", frappe.utils.nowdate())
