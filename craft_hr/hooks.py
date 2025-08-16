@@ -2,15 +2,15 @@ from . import __version__ as app_version
 
 app_name = "craft_hr"
 app_title = "Craft HR"
-app_publisher = "Craftinteractive"
+app_publisher = "Aimms Group"
 app_description = "HR Management System adhering to UAE Labour Law"
-app_email = "info@craftinteractive.ae"
+app_email = "iit@aimmsgroup.com"
 app_license = "MIT"
 
 fixtures = [
-    {'dt':'Custom Field', 'filters':[['module', 'in', {"Craft HR", "OT Mgmt"}]]},
-    {'dt':'Property Setter', 'filters':[['module', 'in', {"Craft HR", "OT Mgmt"}]]},
-    {'dt':'Report', 'filters':[['name', 'in', {"Overtime Summary"}]]},
+    {'dt':'Custom Field', 'filters':[['module', 'in', ["Craft HR", "OT Mgmt"]]]},
+    {'dt':'Property Setter', 'filters':[['module', 'in', ["Craft HR", "OT Mgmt"]]]},
+    {'dt':'Report', 'filters':[['name', 'in', ["Overtime Summary", "monthly_attendance_sheet_HR"]]]},
     ]
 
 # Includes in <head>

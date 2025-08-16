@@ -1,7 +1,7 @@
 // Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 // License: GNU General Public License v3. See license.txt
 
-frappe.query_reports["Monthly Attendance Sheet1"] = {
+frappe.query_reports["Monthly Attendance Sheet HR"] = {
 	filters: [
 		{
 			fieldname: "month",
@@ -73,7 +73,7 @@ frappe.query_reports["Monthly Attendance Sheet1"] = {
 	],
 	onload: function () {
 		return frappe.call({
-			method: "craft_hr.craft_hr.report.new_monthly_attendance_sheet1.new_monthly_attendance_sheet1.get_attendance_years",
+			method: "craft_hr.craft_hr.report.monthly_attendance_sheet_HR.monthly_attendance_sheet1_HR.get_attendance_years",
 			callback: function (r) {
 				var year_filter = frappe.query_report.get_filter("year");
 				year_filter.df.options = r.message;
