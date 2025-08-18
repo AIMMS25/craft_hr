@@ -4,11 +4,11 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - version-15
   pull_request:
 
 concurrency:
-  group: main-craft_hr-${{ github.event.number }}
+  group: version-15-craft_hr-${{ github.event.number }}
   cancel-in-progress: true
 
 jobs:
