@@ -73,7 +73,7 @@ frappe.query_reports["Monthly Attendance Sheet HR"] = {
 	],
 	onload: function () {
 		return frappe.call({
-			method: "craft_hr.craft_hr.report.monthly_attendance_sheet_HR.monthly_attendance_sheet1_HR.get_attendance_years",
+			method: "craft_hr.craft_hr.report.monthly_attendance_sheet_HR.monthly_attendance_sheet_HR.get_attendance_years",
 			callback: function (r) {
 				var year_filter = frappe.query_report.get_filter("year");
 				year_filter.df.options = r.message;
