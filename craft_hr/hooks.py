@@ -10,7 +10,7 @@ app_license = "MIT"
 fixtures = [
     {'dt':'Custom Field', 'filters':[['module', 'in', ["Craft HR", "OT Mgmt"]]]},
     {'dt':'Property Setter', 'filters':[['module', 'in', ["Craft HR", "OT Mgmt"]]]},
-    {'dt':'Report', 'filters':[['name', 'in', ["Overtime Summary", "monthly_attendance_sheet_HR"]]]},
+    {'dt':'Report', 'filters':[['name', 'in', ["Overtime Summary", "monthly_attendance_sheet_HR","monthly_attendance_sheet_HRS"]]]},
     ]
 
 # Includes in <head>
