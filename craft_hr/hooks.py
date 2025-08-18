@@ -4,7 +4,7 @@ app_name = "craft_hr"
 app_title = "Craft HR"
 app_publisher = "Aimms Group"
 app_description = "HR Management System adhering to UAE Labour Law"
-app_email = "iit@aimmsgroup.com"
+app_email = "it@aimmsgroup.com"
 app_license = "MIT"
 
 fixtures = [

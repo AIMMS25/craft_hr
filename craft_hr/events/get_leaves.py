@@ -31,7 +31,7 @@ def get_leaves(date_of_joining, allocation_start_date, leave_distribution_templa
         leaves=0
     return leaves
 
-#def get_earned_leave(employee=None):
+#def get_earned_leave(employee=None): dharma
 def get_earned_leave(employee=None, leave_type=None):
     filters = {
         'docstatus':1,
