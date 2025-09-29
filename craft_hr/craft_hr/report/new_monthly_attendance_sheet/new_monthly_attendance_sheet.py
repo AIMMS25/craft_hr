@@ -23,6 +23,7 @@ status_map = {
   "Work From Home": "WFH",
   "Holiday": "H",
   "Weekly Off": "WO",
+  "Duty Off": "WO",
 }
 
 leave_types = frappe.get_all("Attendance", filters={"status":"On Leave"},fields=["leave_type"])
@@ -53,6 +54,7 @@ status_map_1 = {
 	"Work From Home": "WFH",
 	"Holiday": "H",
 	"Weekly Off": "WO",
+	"Duty Off": "WO",
 }
 
 for leave in leave_types:
